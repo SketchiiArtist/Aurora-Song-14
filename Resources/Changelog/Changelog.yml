@@ -4728,3 +4728,10 @@ Entries:
   id: 8680
   time: '2025-10-27T15:00:03.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/556
+- author: ZingoDult
+  changes:
+    - type: Tweak
+      message: Changed the QM Beret Sprite
+  id: 8681
+  time: '2025-10-27T15:03:14.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/554
