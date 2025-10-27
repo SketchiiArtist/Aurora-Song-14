@@ -125,12 +125,12 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretQM
   name: quartermaster's beret
-  description: A beret with the cargo's insignia emblazoned on it. For quartermasters that are more inclined towards style.
+  description: A newly issued beret with the cargo's insignia emblazoned on it. The designers say "It was easier to redesign the beret than owe that lady anything"
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_qm.rsi
+    sprite: _AS/Clothing/Head/Hats/beret_qm.rsi #Aurora
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_qm.rsi
+    sprite: _AS/Clothing/Head/Hats/beret_qm.rsi #Aurora
   - type: Tag
     tags:
     - ClothMade
