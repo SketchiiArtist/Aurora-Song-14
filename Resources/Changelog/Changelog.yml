@@ -4721,3 +4721,10 @@ Entries:
   id: 8679
   time: '2025-10-27T03:42:30.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/553
+- author: Vandanna
+  changes:
+    - type: Fix
+      message: medic rig label
+  id: 8680
+  time: '2025-10-27T15:00:03.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/556
