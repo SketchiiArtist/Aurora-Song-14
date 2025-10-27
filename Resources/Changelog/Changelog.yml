@@ -4735,3 +4735,10 @@ Entries:
   id: 8681
   time: '2025-10-27T15:03:14.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/554
+- author: GreyScaleHarlequin
+  changes:
+    - type: Tweak
+      message: Weapon fills should have proper ammo types, and some guns rechambered
+  id: 8682
+  time: '2025-10-27T16:09:10.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/555
