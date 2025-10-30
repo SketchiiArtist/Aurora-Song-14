@@ -4749,3 +4749,10 @@ Entries:
   id: 8683
   time: '2025-10-29T04:14:39.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/558
+- author: ZingoDult
+  changes:
+    - type: Add
+      message: New Beret for The Syndicate
+  id: 8684
+  time: '2025-10-30T15:02:57.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/557
