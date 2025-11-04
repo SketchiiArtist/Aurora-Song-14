@@ -309,6 +309,7 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     state: bird-whole-cooked
+  - type: SolutionContainerManager
     solutions:
       food:
         reagents:
