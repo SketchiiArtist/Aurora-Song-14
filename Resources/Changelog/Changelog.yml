@@ -4774,3 +4774,10 @@ Entries:
   id: 8822
   time: '2025-11-05T00:25:37.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/566
+- author: Vandanna
+  changes:
+    - type: Fix
+      message: The build
+  id: 8823
+  time: '2025-11-05T17:36:36.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/574
