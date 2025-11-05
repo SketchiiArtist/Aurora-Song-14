@@ -84,7 +84,7 @@ public abstract partial class SharedGravitySystem : EntitySystem
     /// <param name="entity">The entity we are updating the weightless status of</param>
     public void RefreshWeightless(Entity<GravityAffectedComponent?> entity)
     {
-        if (!_weightlessQuery.Resolve(entity, ref entity.Comp))
+        if (!_weightlessQuery.Resolve(entity, ref entity.Comp, false))
             return;
 
         UpdateWeightless(entity!);
@@ -98,7 +98,7 @@ public abstract partial class SharedGravitySystem : EntitySystem
     /// <param name="weightless">The weightless value we are trying to change to, helps avoid needless networking</param>
     public void RefreshWeightless(Entity<GravityAffectedComponent?> entity, bool weightless)
     {
-        if (!_weightlessQuery.Resolve(entity, ref entity.Comp))
+        if (!_weightlessQuery.Resolve(entity, ref entity.Comp, false))
             return;
 
         // Only update if we're changing our weightless status
@@ -184,7 +184,7 @@ public abstract partial class SharedGravitySystem : EntitySystem
     private void OnGravityChange(ref GravityChangedEvent args)
     {
         var gravity = AllEntityQuery<GravityAffectedComponent, TransformComponent>();
-        while(gravity.MoveNext(out var uid, out var weightless, out var xform))
+        while (gravity.MoveNext(out var uid, out var weightless, out var xform))
         {
             if (xform.GridUid != args.ChangedGridIndex)
                 continue;
