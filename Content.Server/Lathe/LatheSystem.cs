@@ -148,7 +148,7 @@ namespace Content.Server.Lathe
             var recipes = GetAvailableRecipes(uid, component, true);
             foreach (var id in recipes)
             {
-                if (!_proto.TryIndex(id, out var proto))
+                if (!_proto.Resolve(id, out var proto))
                     continue;
                 foreach (var (mat, _) in proto.Materials)
                 {
@@ -316,9 +316,9 @@ namespace Content.Server.Lathe
             if (!Resolve(uid, ref component))
                 return;
 
-            var producing = component.CurrentRecipe;
-            if (producing == null && component.Queue.Count != 0 && component.Queue.First() is { } node) // Frontier - add extra checks since we're still using a list
-                producing = node.Recipe; // Frontier, remove .Value.
+            var producing = component.CurrentRecipe ?? component.Queue.FirstOrDefault()?.Recipe; // Aurora - Fixing Frontier's fix
+            //if (producing == null && component.Queue.TryPeek(out var next))
+            //    producing = next;
 
             var state = new LatheUpdateState(GetAvailableRecipes(uid, component), component.Queue, producing);
             _uiSys.SetUiState(uid, LatheUiKey.Key, state);
