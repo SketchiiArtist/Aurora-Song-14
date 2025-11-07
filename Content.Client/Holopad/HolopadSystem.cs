@@ -48,7 +48,10 @@ public sealed class HolopadSystem : SharedHolopadSystem
         if (!HasComp<HolopadUserComponent>(uid))
             return;
 
-        var netEv = new HolopadUserTypingChangedEvent(GetNetEntity(uid.Value), ev.State);
+        // Aurora Song: Convert bool to enum - DeltaV changed TypingChangedEvent to use bool,
+        // but our HolopadUserTypingChangedEvent still expects TypingIndicatorState enum
+        var state = ev.IsTyping ? TypingIndicatorState.Typing : TypingIndicatorState.None;
+        var netEv = new HolopadUserTypingChangedEvent(GetNetEntity(uid.Value), state);
         RaiseNetworkEvent(netEv);
     }
 

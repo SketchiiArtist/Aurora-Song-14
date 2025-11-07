@@ -1,6 +1,6 @@
 using Content.Shared._starcup.AACTablet;
 
-namespace Content.Client._DV.AACTablet.UI;
+namespace Content.Client.DeltaV.AACTablet.UI;
 
 public sealed partial class AACBoundUserInterface
 {

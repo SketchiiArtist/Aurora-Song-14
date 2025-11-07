@@ -1,8 +1,8 @@
 using Content.Server.Radio.Components;
-using Content.Shared._DV.AACTablet;
+using Content.Shared.DeltaV.AACTablet;
 using Content.Shared._starcup.AACTablet;
 
-namespace Content.Server._DV.AACTablet;
+namespace Content.Server.DeltaV.AACTablet;
 
 public sealed partial class AACTabletSystem
 {
