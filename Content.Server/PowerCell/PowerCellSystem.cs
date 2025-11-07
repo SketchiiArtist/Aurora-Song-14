@@ -69,7 +69,7 @@ public sealed partial class PowerCellSystem : SharedPowerCellSystem
         }
 
         var frac = args.Charge / args.MaxCharge;
-        // Only show full charge sprite (level 2) when actually at 100%
+        // Aurora's Song - Only show full charge sprite (level 2) when actually at 100%
         byte level;
         if (frac >= 1.0f)
             level = PowerCellComponent.PowerCellVisualsLevels; // Full charge (green/o2)
