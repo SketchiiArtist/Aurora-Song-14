@@ -4825,3 +4825,10 @@ Entries:
   id: 8829
   time: '2025-11-07T08:38:13.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/583
+- author: Vandanna
+  changes:
+    - type: Fix
+      message: power cell status indicators
+  id: 8830
+  time: '2025-11-07T18:37:07.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/584
