@@ -88,8 +88,10 @@ public sealed class PlantHolderSystem : EntitySystem
         if (component.Seed == null)
             return 0;
 
+        // Aurora - Clamp growth stage calculation to prevent requesting non-existent sprite states
+        // Age can exceed maturation during repeat harvests, causing stage index overflow
         var result = Math.Max(1, (int)(component.Age * component.Seed.GrowthStages / component.Seed.Maturation));
-        return result;
+        return Math.Min(result, component.Seed.GrowthStages);
     }
 
     private void OnExamine(Entity<PlantHolderComponent> entity, ref ExaminedEvent args)
