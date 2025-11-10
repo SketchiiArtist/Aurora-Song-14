@@ -1,0 +1,282 @@
+﻿# Aurora Song - AS Bluespace Bounty Events
+# Examples of bounty objectives for bluespace error events
+# Based on New Frontier's bluespace error system with bounty extensions
+#
+# OBJECTIVE TYPES:
+# - captureTargets: Must be ALIVE + CUFFED (success when mob is alive AND has cuffs)
+# - eliminationTargets: Must be DEAD (success when mob is dead)
+# - removalTargets: Must be REMOVED from grid (success when entity no longer on grid)
+# - rescueTargets: Must be ALIVE + NOT CUFFED (success when mob is alive AND has no cuffs)
+
+# Test event - all objective types for debugging
+- type: entity
+  id: ASBluespaceTestBounty
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-bluespace-bounty-test-start
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 1
+    weight: 100
+    duration: 10
+    maxDuration: 15
+  - type: BluespaceErrorBountyRule
+    announcementChannels:
+    - Common
+    - Nfsd
+    - Medical
+    groups:
+      grid: !type:GridSpawnGroup
+        nameLoc:
+        - station-event-bluespace-name-TestBountyGrid
+        minimumDistance: 500
+        maximumDistance: 1000
+        addComponents:
+        - type: Gravity
+          enabled: true
+          inherent: true
+        - type: IFF
+          color: "#FF0000"
+        - type: LinkedLifecycleGridParent
+        - type: ProtectedGrid
+        - type: DeletionCensusExempt
+        paths:
+        - /Maps/_AS/Bluespace/Test/testobjbox.yml
+    rewardAccounts:
+      Nfsd: 0.5
+      Frontier: 0.5
+    captureTargets:
+      MobHuman:
+        expectedCount: 1
+        rewardPerTarget: 1000
+        penaltyPerMissing: 500
+    eliminationTargets:
+      MobMouse:
+        expectedCount: 1
+        rewardPerTarget: 200
+        penaltyPerSurvivor: 100
+    removalTargets:
+      CrateGenericSteel:
+        expectedCount: 1
+        rewardPerRemoved: 300
+        penaltyPerRemaining: 150
+    # Rescue objectives: Target must be ALIVE and NOT CUFFED at event end
+    # Success = mob is alive AND has no cuffs (CuffedHandCount == 0)
+    # Failure = mob is dead OR cuffed
+    rescueTargets:
+      MobVulpkanin:
+        expectedCount: 1
+        rewardPerTarget: 1000
+        penaltyPerMissing: 500
+
+# ============================================================================
+# EXAMPLE EVENTS BELOW - All lines commented out
+# Remove the # from each line to enable an example
+# ============================================================================
+
+## Example bounty event - capture a specific syndicate agent
+#- type: entity
+#  id: ASBluespaceSyndicateAgentBounty
+#  parent: BaseStationEventShortDelay
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-bluespace-bounty-start-announcement
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    warningAnnouncement: station-event-bluespace-bounty-warning-announcement
+#    endAnnouncement: station-event-bluespace-bounty-end-announcement
+#    earliestStart: 100
+#    weight: 3
+#    duration: 1200
+#    maxDuration: 1800
+#    reoccurrenceDelay: 480
+#    requiredJobs:
+#      Deputy: 3
+#  - type: BluespaceErrorBountyRule
+#    groups:
+#      grid: !type:GridSpawnGroup
+#        nameLoc:
+#        - station-event-bluespace-name-SyndicateEscape
+#        minimumDistance: 1500
+#        maximumDistance: 2500
+#        addComponents:
+#        - type: Gravity
+#          enabled: true
+#          inherent: true
+#        - type: IFF
+#          color: "#E10F9B"
+#        - type: Shuttle
+#        - type: LinkedLifecycleGridParent
+#        - type: ProtectedGrid
+#          preventArtifactTriggers: true
+#        - type: PreventPilot
+#        - type: ForceAnchor
+#        - type: DeletionCensusExempt
+#        paths:
+#        - /Maps/_NF/Bluespace/syndicateagent.yml
+#    rewardAccounts:
+#      Nfsd: 0.5
+#      Frontier: 0.3
+#      Medical: 0.2
+#    captureTargets:
+#      MobSyndicateAgentNukeops:
+#        expectedCount: 1
+#        rewardPerTarget: 3000
+#        penaltyPerMissing: 1500
+#      MobSyndicateCommanderNukeops:
+#        expectedCount: 1
+#        rewardPerTarget: 5000
+#        penaltyPerMissing: 2500
+#
+## Example: Medical patient rescue (must NOT be cuffed)
+#- type: entity
+#  id: ASBluespaceMedicalRescueBounty
+#  parent: BaseStationEventShortDelay
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-bluespace-medical-rescue-start
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    warningAnnouncement: station-event-bluespace-medical-rescue-warning
+#    endAnnouncement: station-event-bluespace-medical-rescue-end
+#    earliestStart: 50
+#    weight: 5
+#    duration: 900
+#    maxDuration: 1500
+#  - type: BluespaceErrorBountyRule
+#    groups:
+#      grid: !type:GridSpawnGroup
+#        nameLoc:
+#        - station-event-bluespace-name-AbandonedMedical
+#        minimumDistance: 1500
+#        maximumDistance: 2500
+#        addComponents:
+#        - type: Gravity
+#          enabled: true
+#          inherent: true
+#        - type: IFF
+#        - type: LinkedLifecycleGridParent
+#        - type: ProtectedGrid
+#        - type: DeletionCensusExempt
+#        paths:
+#        - /Maps/_NF/Bluespace/medicalrescue.yml
+#    rewardAccounts:
+#      Medical: 0.6
+#      Frontier: 0.4
+#    rescueTargets:
+#      MobHumanScientist:
+#        expectedCount: 2
+#        rewardPerTarget: 1500
+#        penaltyPerMissing: 750
+#      MobHumanDoctor:
+#        expectedCount: 1
+#        rewardPerTarget: 2000
+#        penaltyPerMissing: 1000
+#
+## Example: Contraband removal (reward scales with removed items)
+#- type: entity
+#  id: ASBluespaceContrabandRemovalBounty
+#  parent: BaseStationEventShortDelay
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-bluespace-contraband-start
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    warningAnnouncement: station-event-bluespace-contraband-warning
+#    endAnnouncement: station-event-bluespace-contraband-end
+#    earliestStart: 75
+#    weight: 4
+#    duration: 1000
+#    maxDuration: 1600
+#  - type: BluespaceErrorBountyRule
+#    groups:
+#      grid: !type:GridSpawnGroup
+#        nameLoc:
+#        - station-event-bluespace-name-SmugglerDen
+#        minimumDistance: 1500
+#        maximumDistance: 2500
+#        addComponents:
+#        - type: Gravity
+#          enabled: true
+#          inherent: true
+#        - type: IFF
+#          color: "#FF6B00"
+#        - type: LinkedLifecycleGridParent
+#        - type: ProtectedGrid
+#        - type: DeletionCensusExempt
+#        paths:
+#        - /Maps/_NF/Bluespace/smugglerden.yml
+#    rewardAccounts:
+#      Nfsd: 0.7
+#      Frontier: 0.3
+#    removalTargets:
+#      CrateContraband:
+#        expectedCount: 5
+#        rewardPerRemoved: 500
+#        penaltyPerRemaining: 250
+#      WeaponLaserCarbine:
+#        expectedCount: 8
+#        rewardPerRemoved: 300
+#        penaltyPerRemaining: 150
+#      ExplosivesC4:
+#        expectedCount: 3
+#        rewardPerRemoved: 800
+#        penaltyPerRemaining: 400
+#    captureTargets:
+#      MobSmugglerCargoTechnician:
+#        expectedCount: 2
+#        rewardPerTarget: 2000
+#        penaltyPerMissing: 1000
+#
+## Example: Pest extermination (must be dead)
+#- type: entity
+#  id: ASBluespacePestExterminationBounty
+#  parent: BaseStationEventShortDelay
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-bluespace-pest-start
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    warningAnnouncement: station-event-bluespace-pest-warning
+#    endAnnouncement: station-event-bluespace-pest-end
+#    earliestStart: 60
+#    weight: 5
+#    duration: 800
+#    maxDuration: 1400
+#  - type: BluespaceErrorBountyRule
+#    groups:
+#      grid: !type:GridSpawnGroup
+#        nameLoc:
+#        - station-event-bluespace-name-InfestedStation
+#        minimumDistance: 1500
+#        maximumDistance: 2500
+#        addComponents:
+#        - type: Gravity
+#          enabled: true
+#          inherent: true
+#        - type: IFF
+#          color: "#00FF00"
+#        - type: LinkedLifecycleGridParent
+#        - type: ProtectedGrid
+#        - type: DeletionCensusExempt
+#        paths:
+#        - /Maps/_NF/Bluespace/infestedstation.yml
+#    rewardAccounts:
+#      Nfsd: 0.4
+#      Frontier: 0.4
+#      Medical: 0.2
+#    eliminationTargets:
+#      MobHostileSpaceSpider:
+#        expectedCount: 12
+#        rewardPerTarget: 200
+#        penaltyPerSurvivor: 100
+#      MobHostileSpaceSpiderQueen:
+#        expectedCount: 1
+#        rewardPerTarget: 2000
+#        penaltyPerSurvivor: 1000
+#    rescueTargets:
+#      MobHumanMiner:
+#        expectedCount: 3
+#        rewardPerTarget: 1000
+#        penaltyPerMissing: 500
