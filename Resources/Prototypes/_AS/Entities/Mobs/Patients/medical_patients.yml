@@ -103,6 +103,7 @@
   - type: Vocalizer
     minVocalizeInterval: 45
     maxVocalizeInterval: 180
+    hideChat: true
   - type: DatasetVocalizer
     dataset: asmedicalpatientchatter
 
