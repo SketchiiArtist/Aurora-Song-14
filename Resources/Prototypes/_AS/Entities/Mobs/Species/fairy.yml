@@ -55,7 +55,7 @@
         Blunt: 10
   - type: Stamina
   - type: Bloodstream
-    bloodReagent: Sap
+    bloodReagent: FairyBlood
     BloodMaxVolume: 20
   - type: PseudoItem
     size: Small
