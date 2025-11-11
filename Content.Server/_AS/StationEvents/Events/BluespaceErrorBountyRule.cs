@@ -509,12 +509,19 @@ public sealed class BluespaceErrorBountyRule : StationEventSystem<BluespaceError
                     _transform.SetCoordinates(mob.Entity.Owner, new EntityCoordinates(mob.MapUid, mob.MapPosition));
                 }
 
-                // Award base salvage rewards (Frontier logic)
-                foreach (var (account, rewardCoeff) in component.RewardAccounts)
+                // Award base salvage rewards (Frontier logic) - only if includeGridValue is true
+                if (component.IncludeGridValue)
                 {
-                    var baseReward = (int)(gridValue * rewardCoeff);
-                    Log.Info($"[BOUNTY DEBUG] Awarding base salvage to {account}: {baseReward} (gridValue={gridValue}, coeff={rewardCoeff})");
-                    _bank.TrySectorDeposit(account, baseReward, LedgerEntryType.BluespaceReward);
+                    foreach (var (account, rewardCoeff) in component.RewardAccounts)
+                    {
+                        var baseReward = (int)(gridValue * rewardCoeff);
+                        Log.Info($"[BOUNTY DEBUG] Awarding base salvage to {account}: {baseReward} (gridValue={gridValue}, coeff={rewardCoeff})");
+                        _bank.TrySectorDeposit(account, baseReward, LedgerEntryType.BluespaceReward);
+                    }
+                }
+                else
+                {
+                    Log.Info($"[BOUNTY DEBUG] Skipping grid value rewards (IncludeGridValue=false, gridValue={gridValue})");
                 }
 
                 // Award flat bounty bonus/penalty (Aurora Song)
@@ -599,12 +606,32 @@ public sealed class BluespaceErrorBountyRule : StationEventSystem<BluespaceError
     private string BuildAnnouncementMessage(Dictionary<string, (int success, int expected)> stats, int totalReward)
     {
         var lines = new List<string>();
+        var allComplete = true;
+        var anyProgress = false;
 
         foreach (var (key, (success, expected)) in stats)
         {
             var parts = key.Split('_', 2);
             var type = parts[0];
             var proto = parts.Length > 1 ? parts[1] : "unknown";
+
+            // Track completion status for summary
+            if (success >= expected)
+            {
+                // This objective is complete
+                anyProgress = true;
+            }
+            else if (success > 0)
+            {
+                // This objective has partial progress
+                allComplete = false;
+                anyProgress = true;
+            }
+            else
+            {
+                // This objective failed completely
+                allComplete = false;
+            }
 
             string line = type switch
             {
@@ -622,9 +649,23 @@ public sealed class BluespaceErrorBountyRule : StationEventSystem<BluespaceError
             lines.Add(line);
         }
 
-        var summary = totalReward >= 0
-            ? Loc.GetString("bluespace-bounty-success-summary", ("reward", totalReward))
-            : Loc.GetString("bluespace-bounty-failure-summary", ("penalty", Math.Abs(totalReward)));
+        // Determine summary based on completion status
+        string summary;
+        if (allComplete)
+        {
+            // All objectives fully completed
+            summary = Loc.GetString("bluespace-bounty-success-summary", ("reward", totalReward));
+        }
+        else if (anyProgress)
+        {
+            // Some objectives completed or partially completed
+            summary = Loc.GetString("bluespace-bounty-partial-summary", ("reward", totalReward));
+        }
+        else
+        {
+            // All objectives completely failed
+            summary = Loc.GetString("bluespace-bounty-failure-summary", ("penalty", Math.Abs(totalReward)));
+        }
 
         return $"{summary}\n{string.Join("\n", lines)}";
     }

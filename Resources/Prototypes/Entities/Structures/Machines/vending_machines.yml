@@ -115,7 +115,7 @@
     pack: EmptyVendingMachineInventory # Mandatory, use empty inventory
     taxAccounts:
       Frontier: 0.25
-      Nfsd: 0.15
+      Sle: 0.15 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
     cashSlot:
       whitelist:
         components:

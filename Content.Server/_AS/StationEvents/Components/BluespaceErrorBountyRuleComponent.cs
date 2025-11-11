@@ -42,6 +42,14 @@ public sealed partial class BluespaceErrorBountyRuleComponent : Component
     [DataField]
     public double StartingValue = 0;
 
+    /// <summary>
+    /// Whether to include grid value (salvage) as part of the reward.
+    /// If true, the grid's appraised value is calculated and awarded.
+    /// If false, only bounty objective rewards/penalties are given.
+    /// </summary>
+    [DataField]
+    public bool IncludeGridValue = true;
+
     // Aurora Song - Bounty-specific fields
 
     /// <summary>
@@ -89,14 +97,14 @@ public sealed partial class BluespaceErrorBountyRuleComponent : Component
 [DataDefinition]
 public sealed partial class BountyCaptureTarget
 {
-    [DataField]
-    public int ExpectedCount = 1;
+    [DataField("count")]
+    public int ExpectedCount;
 
-    [DataField]
-    public int RewardPerTarget = 1000;
+    [DataField("reward")]
+    public int RewardPerTarget;
 
-    [DataField]
-    public int PenaltyPerMissing = 500;
+    [DataField("penalty")]
+    public int PenaltyPerMissing;
 }
 
 /// <summary>
@@ -105,14 +113,14 @@ public sealed partial class BountyCaptureTarget
 [DataDefinition]
 public sealed partial class BountyEliminationTarget
 {
-    [DataField]
-    public int ExpectedCount = 1;
+    [DataField("count")]
+    public int ExpectedCount;
 
-    [DataField]
-    public int RewardPerTarget = 500;
+    [DataField("reward")]
+    public int RewardPerTarget;
 
-    [DataField]
-    public int PenaltyPerSurvivor = 250;
+    [DataField("penalty")]
+    public int PenaltyPerSurvivor;
 }
 
 /// <summary>
@@ -121,14 +129,14 @@ public sealed partial class BountyEliminationTarget
 [DataDefinition]
 public sealed partial class BountyRemovalTarget
 {
-    [DataField]
-    public int ExpectedCount = 1;
+    [DataField("count")]
+    public int ExpectedCount;
 
-    [DataField]
-    public int RewardPerRemoved = 300;
+    [DataField("reward")]
+    public int RewardPerRemoved;
 
-    [DataField]
-    public int PenaltyPerRemaining = 150;
+    [DataField("penalty")]
+    public int PenaltyPerRemaining;
 }
 
 /// <summary>
@@ -137,12 +145,12 @@ public sealed partial class BountyRemovalTarget
 [DataDefinition]
 public sealed partial class BountyRescueTarget
 {
-    [DataField]
-    public int ExpectedCount = 1;
+    [DataField("count")]
+    public int ExpectedCount;
 
-    [DataField]
-    public int RewardPerTarget = 800;
+    [DataField("reward")]
+    public int RewardPerTarget;
 
-    [DataField]
-    public int PenaltyPerMissing = 400;
+    [DataField("penalty")]
+    public int PenaltyPerMissing;
 }

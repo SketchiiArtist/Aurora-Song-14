@@ -19,12 +19,13 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 1
     weight: 100
-    duration: 10
-    maxDuration: 15
+    duration: 60
+    maxDuration: 65
   - type: BluespaceErrorBountyRule
+    includeGridValue: false  # Optional - defaults to true. Set to false to only award bounty objectives (no salvage value)
     announcementChannels:
     - Common
-    - Nfsd
+    - Sle # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
     - Medical
     groups:
       grid: !type:GridSpawnGroup
@@ -44,31 +45,31 @@
         paths:
         - /Maps/_AS/Bluespace/Test/testobjbox.yml
     rewardAccounts:
-      Nfsd: 0.5
+      Sle: 0.5 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
       Frontier: 0.5
     captureTargets:
       MobHuman:
-        expectedCount: 1
-        rewardPerTarget: 10000000
-        penaltyPerMissing: 500
+        count: 2
+        reward: 1000
+        penalty: 500
     eliminationTargets:
       MobMouse:
-        expectedCount: 1
-        rewardPerTarget: 200
-        penaltyPerSurvivor: 100
+        count: 1
+        reward: 200
+        penalty: 100
     removalTargets:
       CrateGenericSteel:
-        expectedCount: 1
-        rewardPerRemoved: 300
-        penaltyPerRemaining: 150
+        count: 1
+        reward: 300
+        penalty: 150
     # Rescue objectives: Target must be ALIVE and NOT CUFFED at event end
     # Success = mob is alive AND has no cuffs (CuffedHandCount == 0)
     # Failure = mob is dead OR cuffed
     rescueTargets:
       MobVulpkanin:
-        expectedCount: 1
-        rewardPerTarget: 1000
-        penaltyPerMissing: 500
+        count: 1
+        reward: 1000
+        penalty: 500
 
 # ============================================================================
 # EXAMPLE EVENTS BELOW - All lines commented out
@@ -115,19 +116,20 @@
 #        - type: DeletionCensusExempt
 #        paths:
 #        - /Maps/_NF/Bluespace/syndicateagent.yml
+#    includeGridValue: false  # Set to false to only award bounty objectives (no salvage value). Defaults to true.
 #    rewardAccounts:
-#      Nfsd: 0.5
+#      Sle: 0.5 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
 #      Frontier: 0.3
 #      Medical: 0.2
 #    captureTargets:
 #      MobSyndicateAgentNukeops:
-#        expectedCount: 1
-#        rewardPerTarget: 3000
-#        penaltyPerMissing: 1500
+#        count: 1
+#        reward: 3000
+#        penalty: 1500
 #      MobSyndicateCommanderNukeops:
-#        expectedCount: 1
-#        rewardPerTarget: 5000
-#        penaltyPerMissing: 2500
+#        count: 1
+#        reward: 5000
+#        penalty: 2500
 #
 ## Example: Medical patient rescue (must NOT be cuffed)
 #- type: entity
@@ -166,13 +168,13 @@
 #      Frontier: 0.4
 #    rescueTargets:
 #      MobHumanScientist:
-#        expectedCount: 2
-#        rewardPerTarget: 1500
-#        penaltyPerMissing: 750
+#        count: 2
+#        reward: 1500
+#        penalty: 750
 #      MobHumanDoctor:
-#        expectedCount: 1
-#        rewardPerTarget: 2000
-#        penaltyPerMissing: 1000
+#        count: 1
+#        reward: 2000
+#        penalty: 1000
 #
 ## Example: Contraband removal (reward scales with removed items)
 #- type: entity
@@ -208,26 +210,26 @@
 #        paths:
 #        - /Maps/_NF/Bluespace/smugglerden.yml
 #    rewardAccounts:
-#      Nfsd: 0.7
+#      Sle: 0.7 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
 #      Frontier: 0.3
 #    removalTargets:
 #      CrateContraband:
-#        expectedCount: 5
-#        rewardPerRemoved: 500
-#        penaltyPerRemaining: 250
+#        count: 5
+#        reward: 500
+#        penalty: 250
 #      WeaponLaserCarbine:
-#        expectedCount: 8
-#        rewardPerRemoved: 300
-#        penaltyPerRemaining: 150
+#        count: 8
+#        reward: 300
+#        penalty: 150
 #      ExplosivesC4:
-#        expectedCount: 3
-#        rewardPerRemoved: 800
-#        penaltyPerRemaining: 400
+#        count: 3
+#        reward: 800
+#        penalty: 400
 #    captureTargets:
 #      MobSmugglerCargoTechnician:
-#        expectedCount: 2
-#        rewardPerTarget: 2000
-#        penaltyPerMissing: 1000
+#        count: 2
+#        reward: 2000
+#        penalty: 1000
 #
 ## Example: Pest extermination (must be dead)
 #- type: entity
@@ -263,20 +265,20 @@
 #        paths:
 #        - /Maps/_NF/Bluespace/infestedstation.yml
 #    rewardAccounts:
-#      Nfsd: 0.4
+#      Sle: 0.4 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
 #      Frontier: 0.4
 #      Medical: 0.2
 #    eliminationTargets:
 #      MobHostileSpaceSpider:
-#        expectedCount: 12
-#        rewardPerTarget: 200
-#        penaltyPerSurvivor: 100
+#        count: 12
+#        reward: 200
+#        penalty: 100
 #      MobHostileSpaceSpiderQueen:
-#        expectedCount: 1
-#        rewardPerTarget: 2000
-#        penaltyPerSurvivor: 1000
+#        count: 1
+#        reward: 2000
+#        penalty: 1000
 #    rescueTargets:
 #      MobHumanMiner:
-#        expectedCount: 3
-#        rewardPerTarget: 1000
-#        penaltyPerMissing: 500
+#        count: 3
+#        reward: 1000
+#        penalty: 500

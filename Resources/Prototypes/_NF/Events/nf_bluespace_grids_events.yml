@@ -38,7 +38,7 @@
         paths:
         - /Maps/_NF/Bluespace/cache.yml
     rewardAccounts:
-      Nfsd: 0.25
+      Sle: 0.25 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
       Frontier: 0.25
       Medical: 0.25
       Edison: 0.25
@@ -82,7 +82,7 @@
         paths:
         - /Maps/_NF/Bluespace/vault.yml
     rewardAccounts:
-      Nfsd: 0.25
+      Sle: 0.25 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
       Frontier: 0.25
       Medical: 0.25
       Edison: 0.25
@@ -126,7 +126,7 @@
         paths:
         - /Maps/_NF/Bluespace/vaultsmall.yml
     rewardAccounts:
-      Nfsd: 0.25
+      Sle: 0.25 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
       Frontier: 0.25
       Medical: 0.25
       Edison: 0.25

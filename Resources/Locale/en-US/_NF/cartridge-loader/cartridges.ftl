@@ -14,13 +14,14 @@ ledger-balance = Balance:
 ledger-no-balance = N/A
 
 ledger-tab-Frontier = Frontier Outpost
-ledger-tab-Nfsd = SLE
+ledger-tab-Sle = SLE # Aurora Song - Changed from ledger-tab-Nfsd to ledger-tab-Sle
 ledger-tab-Medical = Medical Dispatch
 ledger-tab-Edison = Edison
 # Fallback, if this displays, something's wrong.
 ledger-tab-Unknown = Unknown
 
-ledger-entry-type-TickingIncome = NT Subsidies
+# Aurora Song: Changed from "NT Subsidies" to "Govt. Subsidies"
+ledger-entry-type-TickingIncome = Govt. Subsidies
 ledger-entry-type-VendorTax = Vendor Taxes
 ledger-entry-type-CargoTax = Cargo Taxes
 ledger-entry-type-MailDelivered = Mail Payments

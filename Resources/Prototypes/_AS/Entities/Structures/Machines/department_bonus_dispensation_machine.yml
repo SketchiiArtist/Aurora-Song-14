@@ -1,0 +1,118 @@
+# Aurora Song - Department Bonus Dispensation Machine Entities
+
+- type: entity
+  id: DepartmentTaxMachineBase
+  parent: [BaseStructureIndestructible, BaseStructureDisableAnchoring, BaseMachinePowered]
+  abstract: true
+  name: department bonus machine
+  description: Periodically allocates a percentage of a department's budget for staff bonuses. Requires department access to dispense.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/clothing.rsi
+    snapCardinals: true
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: UserInterface
+    interfaces:
+      enum.DepartmentBonusDispensationMachineUiKey.Key:
+        type: DepartmentBonusDispensationMachineBoundUserInterface
+  - type: ActivatableUIRequiresPower
+  - type: ActivatableUI
+    key: enum.DepartmentBonusDispensationMachineUiKey.Key
+    singleUser: true
+  - type: DepartmentBonusDispensationMachine
+
+
+# SLE Department Bonus Machine
+- type: entity
+  id: DepartmentTaxMachineSle
+  parent: DepartmentTaxMachineBase
+  name: SLE bonus machine
+  description: Periodically allocates 10% of the SLE Department's budget for staff bonuses.
+  components:
+  - type: DepartmentBonusDispensationMachine
+    targetDepartment: Sle # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
+    taxRate: 0.1
+    withdrawalInterval: 30  # 30 seconds
+  - type: AccessReader
+    access: [["Security"]]
+
+# Frontier Department Bonus Machine
+- type: entity
+  id: DepartmentTaxMachineFrontier
+  parent: DepartmentTaxMachineBase
+  name: Frontier bonus machine
+  description: Periodically allocates 10% of the Frontier Department's budget for staff bonuses.
+  components:
+  - type: DepartmentBonusDispensationMachine
+    targetDepartment: Frontier
+    taxRate: 0.1
+    withdrawalInterval: 300  # 5 minutes
+  - type: AccessReader
+    access: [["Command"]]
+
+# Medical Department Bonus Machine
+- type: entity
+  id: DepartmentTaxMachineMedical
+  parent: DepartmentTaxMachineBase
+  name: Medical bonus machine
+  description: Periodically allocates 10% of the Medical Department's budget for staff bonuses.
+  components:
+  - type: DepartmentBonusDispensationMachine
+    targetDepartment: Medical
+    taxRate: 0.1
+    withdrawalInterval: 300  # 5 minutes
+  - type: AccessReader
+    access: [["Medical"]]
+
+## Logistics Department Bonus Machine
+#- type: entity
+#  id: DepartmentTaxMachineLogistics
+#  parent: DepartmentTaxMachineBase
+#  name: Logistics bonus machine
+#  description: Periodically allocates 10% of the Logistics Department's budget for staff bonuses.
+#  components:
+#  - type: DepartmentBonusDispensationMachine
+#    targetDepartment: Logistics
+#    taxRate: 0.1
+#    withdrawalInterval: 300  # 5 minutes
+#  - type: AccessReader
+#    access: [["Cargo"]]
+#
+## Engineering Department Bonus Machine
+#- type: entity
+#  id: DepartmentTaxMachineEngineering
+#  parent: DepartmentTaxMachineBase
+#  name: Engineering bonus machine
+#  description: Periodically allocates 10% of the Engineering Department's budget for staff bonuses.
+#  components:
+#  - type: DepartmentBonusDispensationMachine
+#    targetDepartment: Engineering
+#    taxRate: 0.1
+#    withdrawalInterval: 300  # 5 minutes
+#  - type: AccessReader
+#    access: [["Engineering"]]
+#
+## Science Department Bonus Machine
+#- type: entity
+#  id: DepartmentTaxMachineScience
+#  parent: DepartmentTaxMachineBase
+#  name: Science bonus machine
+#  description: Periodically allocates 10% of the Science Department's budget for staff bonuses.
+#  components:
+#  - type: DepartmentBonusDispensationMachine
+#    targetDepartment: Science
+#    taxRate: 0.1
+#    withdrawalInterval: 300  # 5 minutes
+#  - type: AccessReader
+#    access: [["Research"]]

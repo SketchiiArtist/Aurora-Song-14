@@ -16,6 +16,7 @@ bluespace-bounty-removed = Removed: {$success}/{$expected} {$prototype}
 bluespace-bounty-rescued = Rescued: {$success}/{$expected} {$prototype}
 
 bluespace-bounty-success-summary = Bounty objectives completed. Bonus reward: {$reward} spacebucks.
+bluespace-bounty-partial-summary = Bounty objectives partially completed. Net balance: {$reward} spacebucks.
 bluespace-bounty-failure-summary = Bounty objectives failed. Penalty: {$penalty} spacebucks deducted.
 
 ## Announcement titles

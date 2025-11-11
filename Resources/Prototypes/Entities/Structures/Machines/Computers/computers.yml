@@ -905,7 +905,7 @@
   - type: NFCargoOrderConsole # Frontier: use NF component
     taxAccounts: # Frontier
       Frontier: 0.25 # Frontier
-      Nfsd: 0.15 # Frontier
+      Sle: 0.15 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
     # removeLimitAccess: [ "Quartermaster" ] # Frontier
   # - type: ActiveRadio # Frontier
   #   channels: # Frontier

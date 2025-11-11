@@ -34,7 +34,7 @@ public enum SectorBankAccount : byte
 {
     Invalid, // No assigned account.
     Frontier,
-    Nfsd,
+    Sle, // Aurora Song - Renamed from Nfsd to Sle (Station Law Enforcement)
     Medical,
     Edison,
 }
