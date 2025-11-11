@@ -28,7 +28,7 @@
     maxVocalizeInterval: 120
     hideChat: true
   - type: DatasetVocalizer
-    dataset: syndicatehumanoidchatter
+    dataset: hostileprisonerchatter
   - type: Loadout
     prototypes:
     - MobHostilePrisonerGear
@@ -70,7 +70,7 @@
     maxVocalizeInterval: 120
     hideChat: true
   - type: DatasetVocalizer
-    dataset: syndicatehumanoidchatter
+    dataset: hostileprisonerchatter
   - type: Loadout
     prototypes:
     - MobHostileRiotPrisonerGear
@@ -113,7 +113,7 @@
     maxVocalizeInterval: 120
     hideChat: true
   - type: DatasetVocalizer
-    dataset: syndicatehumanoidchatter
+    dataset: hostileprisonerchatter
   - type: Loadout
     prototypes:
     - MobHostileArmedPrisonerGear
