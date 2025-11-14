@@ -19,6 +19,7 @@ using Content.Server._AS.StationEvents.Components;
 using Content.Shared._NF.Bank.BUI;
 using Content.Server._NF.Salvage;
 using Content.Server._NF.StationEvents.Components;
+using Content.Server._NF.Station.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
@@ -57,6 +58,7 @@ public sealed class BluespaceErrorBountyRule : StationEventSystem<BluespaceError
     [Dependency] private readonly SharedSalvageSystem _salvage = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
+    [Dependency] private readonly StationRenameWarpsSystems _renameWarps = default!;
 
     /// <summary>
     /// Adapted from New Frontier's BluespaceErrorRule.Started
@@ -136,6 +138,18 @@ public sealed class BluespaceErrorBountyRule : StationEventSystem<BluespaceError
                     Log.Info($"[BOUNTY DEBUG] Named grid from dataset: {gridName}");
                 }
 
+                // Sync warp points to use the grid's name
+                if (group.NameWarp)
+                {
+                    bool? adminOnly = group.HideWarp ? true : null;
+                    _renameWarps.SyncWarpPointsToGrid(spawned, forceAdminOnly: adminOnly);
+                    Log.Info($"[BOUNTY DEBUG] Synced warp points to grid, adminOnly: {adminOnly}");
+                }
+
+                // Apply any additional components specified in the YAML
+                EntityManager.AddComponents(spawned, group.AddComponents);
+                Log.Info($"[BOUNTY DEBUG] Applied components to grid");
+
                 component.GridsUid.Add(spawned);
                 Log.Info($"[BOUNTY DEBUG] Added grid to component.GridsUid, total count: {component.GridsUid.Count}");
             }
@@ -158,15 +172,9 @@ public sealed class BluespaceErrorBountyRule : StationEventSystem<BluespaceError
 
         Log.Info($"[BOUNTY DEBUG] TryGridSpawn - paths available: {group.Paths.Count}");
 
-        // Enforce randomness with some round-robin-ish behaviour
-        int maxIndex = group.Paths.Count - (i % group.Paths.Count);
-        int index = _random.Next(maxIndex);
-        var path = group.Paths[index];
+        // Pick a random path without modifying the original list
+        var path = _random.Pick(group.Paths);
         Log.Info($"[BOUNTY DEBUG] Selected path: {path}");
-
-        // Move selected item to the end of the list
-        group.Paths.RemoveAt(index);
-        group.Paths.Add(path);
 
         // Load the grid
         if (_loader.TryLoadGrid(mapId, path, out var ent))

@@ -99,12 +99,16 @@
         - station-event-bluespace-name-prison-ship
         minimumDistance: 1500
         maximumDistance: 2500
+        nameWarp: true  # Rename warp points to match the grid name
+        hideWarp: false  # Make warp points visible (not admin-only)
         addComponents:
         - type: Gravity
           enabled: true
           inherent: true
         - type: IFF
+          flags: None
           color: "#FF4500"
+          readOnly: true
         - type: LinkedLifecycleGridParent
         - type: ProtectedGrid
           preventArtifactTriggers: true
@@ -157,12 +161,16 @@
         - station-event-bluespace-name-smuggler-vessel
         minimumDistance: 1500
         maximumDistance: 2500
+        nameWarp: true  # Rename warp points to match the grid name
+        hideWarp: false  # Make warp points visible (not admin-only)
         addComponents:
         - type: Gravity
           enabled: true
           inherent: true
         - type: IFF
+          flags: None
           color: "#8B4513"
+          readOnly: true
         - type: LinkedLifecycleGridParent
         - type: ProtectedGrid
           preventArtifactTriggers: true
@@ -185,7 +193,7 @@
         reward: 3000
         penalty: 1500
       MobMercenaryBreacherShotgun:
-        count: 4
+        count: 2
         reward: 3000
         penalty: 1500
       MobMercenarySoldierNovalite:
