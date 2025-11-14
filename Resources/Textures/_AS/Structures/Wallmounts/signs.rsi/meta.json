@@ -93,6 +93,16 @@
         },
 		{
 			"name": "genpop"
+		},
+		{
+			"name": "atmos_helium"
+		},
+		{
+			"name": "sle"
+		},
+		{
+			"name": "direction_sle",
+			"directions": 4
 		}
     ]
 }

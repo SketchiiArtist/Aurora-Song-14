@@ -171,6 +171,24 @@
     },
     {
       "name": "door-decal-null"
+    },
+    {
+      "name": "fsa"
+    },
+    {
+      "name": "fsa_door"
+    },
+    {
+      "name": "fsa_open"
+    },
+    {
+      "name": "fsc"
+    },
+    {
+      "name": "fsc_door"
+    },
+    {
+      "name": "fsc_open"
     }
   ]
 }
