@@ -175,3 +175,6 @@
       map: ["enum.LockVisualLayers.Lock"]
   - type: AccessReader
     access: [['Security']]
+  - type: StorageFillVisualizer
+    maxFillLevels: 6
+    fillBaseName: fillEva
