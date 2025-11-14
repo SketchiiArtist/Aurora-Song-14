@@ -28,4 +28,4 @@
   - type: Lock
     locked: true
   - type: AccessReader
-    access: [["AccessImpossible"]]
+    access: [["CentralCommand"]]
