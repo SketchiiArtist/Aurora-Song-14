@@ -1,25 +1,19 @@
 # Aurora Song - Department Bonus Dispensation Machine Entities
 
 - type: entity
-  id: DepartmentTaxMachineBase
+  id: DepartmentBonusMachineBase
   parent: [BaseStructureIndestructible, BaseStructureDisableAnchoring, BaseMachinePowered]
   abstract: true
   name: department bonus machine
   description: Periodically allocates a percentage of a department's budget for staff bonuses. Requires department access to dispense.
+  categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/clothing.rsi
+    sprite: _AS/Structures/Machines/bounty_dispensers.rsi
     snapCardinals: true
-    layers:
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
-      shader: unshaded
-    - state: panel
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    noRot: true
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: UserInterface
@@ -32,15 +26,20 @@
   - type: ActivatableUIRequiresAccess
     singleUser: true
   - type: DepartmentBonusDispensationMachine
+    ejectSound:
+      path: /Audio/Effects/Cargo/ping.ogg
 
 
 # SLE Department Bonus Machine
 - type: entity
-  id: DepartmentTaxMachineSle
-  parent: DepartmentTaxMachineBase
+  id: DepartmentBonusMachineSle
+  parent: DepartmentBonusMachineBase
   name: SLE bonus machine
   description: Periodically allocates a percentage of the SLE Department's budget for staff bonuses. # Aurora Song - Updated from 10% to 50%
   components:
+  - type: Sprite
+    layers:
+    - state: dispenser_sle
   - type: DepartmentBonusDispensationMachine
     targetDepartment: Sle # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
     allocationRate: 0.5 # Aurora Song - Renamed from taxRate to allocationRate
@@ -48,13 +47,16 @@
   - type: AccessReader
     access: [["Security"]]
 
-# Frontier Department Bonus Machine
+# Central Department Bonus Machine
 - type: entity
-  id: DepartmentTaxMachineFrontier
-  parent: DepartmentTaxMachineBase
-  name: Frontier bonus machine
-  description: Periodically allocates 10% of the Frontier Department's budget for staff bonuses.
+  id: DepartmentBonusMachineCentral
+  parent: DepartmentBonusMachineBase
+  name: Central bonus machine
+  description: Periodically allocates 10% of the Central Department's budget for staff bonuses.
   components:
+  - type: Sprite
+    layers:
+    - state: dispenser_sr
   - type: DepartmentBonusDispensationMachine
     targetDepartment: Frontier
     allocationRate: 0.1 # Aurora Song - Renamed from taxRate to allocationRate
@@ -64,11 +66,14 @@
 
 # Medical Department Bonus Machine
 - type: entity
-  id: DepartmentTaxMachineMedical
-  parent: DepartmentTaxMachineBase
+  id: DepartmentBonusMachineMedical
+  parent: DepartmentBonusMachineBase
   name: Medical bonus machine
   description: Periodically allocates 10% of the Medical Department's budget for staff bonuses.
   components:
+  - type: Sprite
+    layers:
+    - state: dispenser_cmo
   - type: DepartmentBonusDispensationMachine
     targetDepartment: Medical
     allocationRate: 0.1 # Aurora Song - Renamed from taxRate to allocationRate
@@ -78,8 +83,8 @@
 
 ## Logistics Department Bonus Machine
 #- type: entity
-#  id: DepartmentTaxMachineLogistics
-#  parent: DepartmentTaxMachineBase
+#  id: DepartmentBonusMachineLogistics
+#  parent: DepartmentBonusMachineBase
 #  name: Logistics bonus machine
 #  description: Periodically allocates 10% of the Logistics Department's budget for staff bonuses.
 #  components:
@@ -92,8 +97,8 @@
 #
 ## Engineering Department Bonus Machine
 #- type: entity
-#  id: DepartmentTaxMachineEngineering
-#  parent: DepartmentTaxMachineBase
+#  id: DepartmentBonusMachineEngineering
+#  parent: DepartmentBonusMachineBase
 #  name: Engineering bonus machine
 #  description: Periodically allocates 10% of the Engineering Department's budget for staff bonuses.
 #  components:
@@ -106,8 +111,8 @@
 #
 ## Science Department Bonus Machine
 #- type: entity
-#  id: DepartmentTaxMachineScience
-#  parent: DepartmentTaxMachineBase
+#  id: DepartmentBonusMachineScience
+#  parent: DepartmentBonusMachineBase
 #  name: Science bonus machine
 #  description: Periodically allocates 10% of the Science Department's budget for staff bonuses.
 #  components:

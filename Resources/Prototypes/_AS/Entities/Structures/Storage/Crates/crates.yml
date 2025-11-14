@@ -11,3 +11,21 @@
     sprite: _AS/Structures/Storage/Crates/syndicate_locked.rsi
   - type: AccessReader
     access: [["NuclearOperative"], ["SyndicateAgent"]]
+
+- type: entity
+  parent: [ BaseStructureIndestructible, CrateBaseSecure ]
+  id: ASCrateSuppliesLocked
+  name: locked supplies crate
+  suffix: Locked
+  description: A yellow steel crate with orange stripes. It contains supplies and is securely locked and can't be opened.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/engicrate_secure.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/engicrate_secure.rsi
+  - type: EntityStorage
+    canRemove: false
+  - type: Lock
+    locked: true
+  - type: AccessReader
+    access: [["AccessImpossible"]]

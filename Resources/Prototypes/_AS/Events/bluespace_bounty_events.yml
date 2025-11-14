@@ -8,68 +8,196 @@
 # - removalTargets: Must be REMOVED from grid (success when entity no longer on grid)
 # - rescueTargets: Must be ALIVE + NOT CUFFED (success when mob is alive AND has no cuffs)
 
-# Test event - all objective types for debugging
+## Test event - all objective types for debugging
+#- type: entity
+#  id: ASBluespaceTestBounty
+#  parent: BaseStationEventShortDelay
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-bluespace-bounty-test-start
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    earliestStart: 1
+#    weight: 100
+#    duration: 60
+#    maxDuration: 65
+#  - type: BluespaceErrorBountyRule
+#    includeGridValue: false  # Optional - defaults to true. Set to false to only award bounty objectives (no salvage value)
+#    announcementChannels:
+#    - Common
+#    - Sle # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
+#    - Medical
+#    groups:
+#      grid: !type:GridSpawnGroup
+#        nameLoc:
+#        - station-event-bluespace-name-TestBountyGrid
+#        minimumDistance: 500
+#        maximumDistance: 1000
+#        addComponents:
+#        - type: Gravity
+#          enabled: true
+#          inherent: true
+#        - type: IFF
+#          color: "#FF0000"
+#        - type: LinkedLifecycleGridParent
+#        - type: ProtectedGrid
+#        - type: DeletionCensusExempt
+#        paths:
+#        - /Maps/_AS/Bluespace/Test/testobjbox.yml
+#    rewardAccounts:
+#      Sle: 0.5 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
+#      Frontier: 0.5
+#    captureTargets:
+#      MobHuman:
+#        count: 1
+#        reward: 1000
+#        penalty: 500
+#    eliminationTargets:
+#      MobMouse:
+#        count: 1
+#        reward: 200
+#        penalty: 100
+#    removalTargets:
+#      CrateGenericSteel:
+#        count: 1
+#        reward: 300
+#        penalty: 150
+#    # Rescue objectives: Target must be ALIVE and NOT CUFFED at event end
+#    # Success = mob is alive AND has no cuffs (CuffedHandCount == 0)
+#    # Failure = mob is dead OR cuffed
+#    rescueTargets:
+#      MobVulpkanin:
+#        count: 1
+#        reward: 1000
+#        penalty: 500
+
+# Capture Mission - Quell the Prison Riot
 - type: entity
-  id: ASBluespaceTestBounty
+  id: ASBluespacePrisonRiot
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-bluespace-bounty-test-start
+    startAnnouncement: station-event-bluespace-prison-riot-start
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 1
-    weight: 100
-    duration: 60
-    maxDuration: 65
+    warningAnnouncement: station-event-bluespace-prison-riot-warning
+    endAnnouncement: station-event-bluespace-prison-riot-end
+    earliestStart: 999999  # Will never trigger automatically, revert in subsequent edits to enable!
+    weight: 1
+    duration: 1500
+    maxDuration: 2100
+    reoccurrenceDelay: 14400
+    requiredJobs:
+      Deputy: 2
   - type: BluespaceErrorBountyRule
-    includeGridValue: false  # Optional - defaults to true. Set to false to only award bounty objectives (no salvage value)
+    includeGridValue: false
     announcementChannels:
-    - Common
-    - Sle # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
-    - Medical
+    - Sle
     groups:
       grid: !type:GridSpawnGroup
         nameLoc:
-        - station-event-bluespace-name-TestBountyGrid
-        minimumDistance: 500
-        maximumDistance: 1000
+        - station-event-bluespace-name-prison-ship
+        minimumDistance: 1500
+        maximumDistance: 2500
         addComponents:
         - type: Gravity
           enabled: true
           inherent: true
         - type: IFF
-          color: "#FF0000"
+          color: "#FF4500"
         - type: LinkedLifecycleGridParent
         - type: ProtectedGrid
+          preventArtifactTriggers: true
+        - type: PreventPilot
+        - type: ForceAnchor
         - type: DeletionCensusExempt
         paths:
-        - /Maps/_AS/Bluespace/Test/testobjbox.yml
+        - /Maps/_AS/Bluespace/Objective/riotsuppression.yml
     rewardAccounts:
-      Sle: 0.5 # Aurora Song - Changed from Nfsd to Sle (Station Law Enforcement)
-      Frontier: 0.5
+      Sle: 1.0
     captureTargets:
-      MobHuman:
-        count: 2
-        reward: 1000
-        penalty: 500
+      MobHostilePrisoner:
+        count: 25
+        reward: 2500
+        penalty: 1250
+      MobHostileArmedPrisoner:
+        count: 9
+        reward: 3500
+        penalty: 1750
+      MobHostileRiotPrisoner:
+        count: 5
+        reward: 5000
+        penalty: 2500
+
+# Confiscation Mission - Smuggler Ship Interception
+- type: entity
+  id: ASBluespaceSmugglerInterception
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-bluespace-smuggler-interception-start
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    warningAnnouncement: station-event-bluespace-smuggler-interception-warning
+    endAnnouncement: station-event-bluespace-smuggler-interception-end
+    earliestStart: 999999  # Will never trigger automatically, revert in subsequent edits to enable!
+    weight: 3
+    duration: 900
+    maxDuration: 2400
+    reoccurrenceDelay: 1500
+    requiredJobs:
+      Deputy: 2
+  - type: BluespaceErrorBountyRule
+    includeGridValue: false
+    announcementChannels:
+    - Sle
+    groups:
+      grid: !type:GridSpawnGroup
+        nameLoc:
+        - station-event-bluespace-name-smuggler-vessel
+        minimumDistance: 1500
+        maximumDistance: 2500
+        addComponents:
+        - type: Gravity
+          enabled: true
+          inherent: true
+        - type: IFF
+          color: "#8B4513"
+        - type: LinkedLifecycleGridParent
+        - type: ProtectedGrid
+          preventArtifactTriggers: true
+        - type: PreventPilot
+        - type: ForceAnchor
+        - type: DeletionCensusExempt
+        paths:
+        - /Maps/_AS/Bluespace/Objective/bulkersmugglerintercept.yml
+        - /Maps/_AS/Bluespace/Objective/bargesmugglerintercept.yml
+        - /Maps/_AS/Bluespace/Objective/mulesmugglerintercept.yml
+    rewardAccounts:
+      Sle: 1.0
     eliminationTargets:
-      MobMouse:
+      MobMercenaryCaptain:
         count: 1
-        reward: 200
-        penalty: 100
+        reward: 10000
+        penalty: 5000
+      MobMercenarySpecialistMedic:
+        count: 2
+        reward: 3000
+        penalty: 1500
+      MobMercenaryBreacherShotgun:
+        count: 4
+        reward: 3000
+        penalty: 1500
+      MobMercenarySoldierNovalite:
+        count: 5
+        reward: 2000
+        penalty: 1000
     removalTargets:
-      CrateGenericSteel:
-        count: 1
-        reward: 300
-        penalty: 150
-    # Rescue objectives: Target must be ALIVE and NOT CUFFED at event end
-    # Success = mob is alive AND has no cuffs (CuffedHandCount == 0)
-    # Failure = mob is dead OR cuffed
-    rescueTargets:
-      MobVulpkanin:
-        count: 1
-        reward: 1000
-        penalty: 500
+      ASCrateSuppliesLocked:
+        count: 10
+        reward: 1500
+        penalty: 750
+
 
 # ============================================================================
 # EXAMPLE EVENTS BELOW - All lines commented out
