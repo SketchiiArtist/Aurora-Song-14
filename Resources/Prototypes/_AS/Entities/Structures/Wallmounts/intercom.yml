@@ -9,5 +9,5 @@
       - IntercomElectronics
       key_slots:
       - EncryptionKeyCommon
-      - EncryptionKeySLE
+      - EncryptionKeyNfsd
       - EncryptionKeyTraffic

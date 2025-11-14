@@ -9,9 +9,6 @@
   - type: Sprite
     sprite: _AS/Structures/Doors/Airlocks/Standard/docksle.rsi
     state: closed
-  - type: Construction
-    graph: AirlockShuttle
-    node: assembly
 
 - type: entity
   id: ASAirlockGlassShuttleSLE
@@ -22,9 +19,6 @@
   components:
   - type: Sprite
     sprite: _AS/Structures/Doors/Airlocks/Glass/docksle.rsi
-  - type: Construction
-    graph: AirlockShuttleSLE
-    node: airlockGlass
 
 - type: entity
   id: ASAirlockGlassShuttleSLELocked
@@ -44,6 +38,3 @@
   components:
   - type: Sprite
     sprite: _AS/Structures/Doors/Airlocks/Standard/docksle.rsi
-  - type: Construction
-    graph: AirlockShuttleSLE
-    node: airlock
