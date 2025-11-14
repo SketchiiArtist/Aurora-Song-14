@@ -98,6 +98,12 @@
       "name": "nfsd_door"
     },
     {
+      "name": "nfsd_door_blank"
+    },
+    {
+      "name": "nfsd_evidence_door"
+    },
+    {
       "name": "nfsd_open"
     },
     {
@@ -123,6 +129,9 @@
     },
     {
       "name": "nfsd_silver_door"
+    },
+    {
+      "name": "nfsd_detective_silver_door"
     },
     {
       "name": "nfsd_silver_open"

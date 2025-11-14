@@ -93,6 +93,9 @@
         },
 		{
 			"name": "genpop"
+		},
+		{
+			"name": "atmos_helium"
 		}
     ]
 }
