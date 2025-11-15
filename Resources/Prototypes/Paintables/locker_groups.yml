@@ -40,6 +40,16 @@
     nfsd-sheriff: LockerNfsdSheriff # Frontier
     station-representative: LockerStationRepresentative # Frontier
     fsb: ClosetFsbEva # Frontier
+    sle: ASLockerSLEBlank # Aurora
+    sle-evidence: ASLockerSLEEvidence # Aurora
+    sle-badge: ASLockerSLEBadge # Aurora
+    sle-copper: ASLockerSLECopper # Aurora
+    sle-silver: ASLockerSLESilver # Aurora
+    sle-detective: ASLockerSLEDetective # Aurora
+    sle-brigmedic: ASLockerSLEBrigmedic # Aurora
+    sle-gold: ASLockerSLESergeant # Aurora
+    sle-bailiff: ASLockerSLEBailiff # Aurora
+    sle-sheriff: ASLockerSLESheriff # Aurora
 
 - type: paintableGroup
   id: Closet

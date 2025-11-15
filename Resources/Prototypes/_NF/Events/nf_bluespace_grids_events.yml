@@ -8,7 +8,7 @@
       path: /Audio/Announcements/attention.ogg
     warningAnnouncement: station-event-bluespace-cache-warning-announcement
     endAnnouncement: station-event-bluespace-cache-end-announcement
-    earliestStart: 100
+    earliestStart: 999999  # Aurora - Will never trigger automatically, revert in subsequent edits to enable!
     weight: 5
     duration: 1350
     maxDuration: 1560
@@ -53,7 +53,7 @@
       path: /Audio/Announcements/attention.ogg
     warningAnnouncement: station-event-bluespace-vault-warning-announcement
     endAnnouncement: station-event-bluespace-vault-end-announcement
-    earliestStart: 100
+    earliestStart: 999999  # Aurora - Will never trigger automatically, revert in subsequent edits to enable!
     weight: 5
     duration: 1020
     maxDuration: 1350
@@ -86,6 +86,7 @@
       Aurora: 0.25 # Aurora Song - Changed from Frontier to Aurora
       Medical: 0.25
       Edison: 0.25
+
 - type: entity
   id: BluespaceVaultSmallError
   parent: BaseStationEventShortDelay
@@ -96,7 +97,7 @@
       path: /Audio/Announcements/attention.ogg
     warningAnnouncement: station-event-bluespace-vault-warning-announcement
     endAnnouncement: station-event-bluespace-vault-end-announcement
-    earliestStart: 100
+    earliestStart: 999999  # Aurora - Will never trigger automatically, revert in subsequent edits to enable!
     maximumPlayers: 30
     weight: 5
     duration: 590

@@ -77,3 +77,9 @@
     - id: ASClothingOuterCoatSLEFormalSheriff
     - id: ASClothingHeadsetSLEGreenCommon # Using green common headset until gold command headset is created
     - id: ASClothingNeckSLEBadgeSheriff
+    - id: ShriffIDCard
+    - id: BoxHandcuff
+    - id: CommsComputerCircuitboard
+    - id: MedalCaseNfsd
+    - id: Demag
+    - id: ASWeaponShotgunBailiff

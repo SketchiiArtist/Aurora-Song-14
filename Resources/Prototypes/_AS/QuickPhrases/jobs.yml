@@ -1,0 +1,113 @@
+# Aurora Song: AAC Tablet QuickPhrase prototypes for jobs
+
+- type: quickPhrase
+  id: JobDirectorOfCare
+  text: job-name-director-of-care
+  tab: Jobs
+  group: Command
+  styleClass: ButtonColorBlue
+
+- type: quickPhrase
+  id: JobDoC
+  text: job-name-doc
+  tab: Jobs
+  group: Command
+  styleClass: ButtonColorBlue
+
+- type: quickPhrase
+  id: JobStationTrafficController
+  text: job-name-station-traffic-controller
+  tab: Jobs
+  group: Logistics
+  styleClass: ButtonColorYellow
+
+- type: quickPhrase
+  id: JobSTC
+  text: job-name-stc
+  tab: Jobs
+  group: Logistics
+  styleClass: ButtonColorYellow
+
+- type: quickPhrase
+  id: JobPlantTechnician
+  text: job-name-plant-technician
+  tab: Jobs
+  group: Engineering
+  styleClass: ButtonColorOrange
+
+- type: quickPhrase
+  id: JobPlantManager
+  text: job-name-plant-manager
+  tab: Jobs
+  group: Engineering
+  styleClass: ButtonColorOrange
+
+- type: quickPhrase
+  id: JobPPM
+  text: job-name-ppm
+  tab: Jobs
+  group: Engineering
+  styleClass: ButtonColorOrange
+
+- type: quickPhrase
+  id: JobCommissioner
+  text: job-name-commissioner
+  tab: Jobs
+  group: Command
+  styleClass: ButtonColorBlue
+
+- type: quickPhrase
+  id: JobMedic
+  text: job-name-medic
+  tab: Jobs
+  group: Medical
+  styleClass: ButtonColorCyan
+
+- type: quickPhrase
+  id: JobLieutenant
+  text: job-name-lieutenant
+  tab: Jobs
+  group: Security
+  styleClass: ButtonColorRed
+
+- type: quickPhrase
+  id: JobSergeant
+  text: job-name-sergeant
+  tab: Jobs
+  group: Security
+  styleClass: ButtonColorRed
+
+- type: quickPhrase
+  id: JobSLEOfficer
+  text: job-name-sle-officer
+  tab: Jobs
+  group: Security
+  styleClass: ButtonColorRed
+
+- type: quickPhrase
+  id: JobOfficer
+  text: job-name-officer
+  tab: Jobs
+  group: Security
+  styleClass: ButtonColorRed
+
+- type: quickPhrase
+  id: JobServiceWorker
+  text: job-name-service-worker
+  tab: Jobs
+  group: Service
+  styleClass: ButtonColorGreen
+
+- type: quickPhrase
+  id: JobMailPerson
+  text: job-name-mail-person
+  tab: Jobs
+  group: Logistics
+  styleClass: ButtonColorYellow
+
+- type: quickPhrase
+  id: JobStationRepresentative
+  text: job-name-station-representative
+  tab: Jobs
+  group: Command
+  styleClass: ButtonColorBlue
