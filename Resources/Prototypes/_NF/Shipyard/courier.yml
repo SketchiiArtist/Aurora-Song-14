@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: FSB Courier
   description: A compact cargo ship designed for hauling shipments.
-  price: 33500 # 19390 0.06 20553.4 + 10k EMU rental because Whatstone is a reasonable person who makes reasonable choices. | Aurora's Song price increased by 1500 for arbitrage check
+  price: 32000 # 19390 0.06 20553.4 + 10k EMU rental because Whatstone is a reasonable person who makes reasonable choices.
   category: Small
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/courier.yml
