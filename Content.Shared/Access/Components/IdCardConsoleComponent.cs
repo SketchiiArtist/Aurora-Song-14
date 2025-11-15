@@ -58,7 +58,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Detective", // Frontier: moved into alphabetical order
         "Engineering",
         "External",
-        "Frontier", // Frontier
+        "Aurora", // Aurora Song - Changed from Frontier to Aurora
         //"Hydroponics",
         "Janitor",
         //"Kitchen",

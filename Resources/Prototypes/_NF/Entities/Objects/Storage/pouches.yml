@@ -1038,7 +1038,7 @@
 - type: entity
   id: NFPouchNfsd
   parent: NFPouchUtility
-  name: SLE pouch
+  name: NFSD pouch
   components:
   - type: Sprite
     layers:

@@ -95,7 +95,7 @@ namespace Content.Server.Forensics
 
         // Frontier: add dead drop rewards
         /// <summary>
-        ///     Rewards the NFSD department for scanning a dead drop.
+        ///     Rewards the SLE department for scanning a dead drop. // Aurora Song - Updated NFSD to SLE
         ///     Gives some amount of spesos and FUC to the
         /// </summary>
         private void GiveReward(EntityUid uidOrigin, EntityUid target, int spesoAmount, FixedPoint2 fucAmount, string msg)
@@ -103,7 +103,7 @@ namespace Content.Server.Forensics
             _audioSystem.PlayPvs(_audioSystem.ResolveSound(_confirmSound), uidOrigin);
 
             if (spesoAmount > 0)
-                _bank.TrySectorDeposit(SectorBankAccount.Nfsd, spesoAmount, LedgerEntryType.AntiSmugglingBonus);
+                _bank.TrySectorDeposit(SectorBankAccount.Sle, spesoAmount, LedgerEntryType.AntiSmugglingBonus); // Aurora Song - Changed Nfsd to Sle
             else
                 spesoAmount = 0;
 
@@ -127,7 +127,7 @@ namespace Content.Server.Forensics
             else
                 fucAmount = 0;
 
-            var channel = _prototypeManager.Index<RadioChannelPrototype>("Nfsd");
+            var channel = _prototypeManager.Index<RadioChannelPrototype>("Sle"); // Aurora Song - Changed from "Nfsd" to "Sle"
             string msgString = Loc.GetString(msg);
             if (fucAmount >= 1)
             {

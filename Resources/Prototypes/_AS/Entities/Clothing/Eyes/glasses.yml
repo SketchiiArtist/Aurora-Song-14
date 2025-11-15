@@ -1,0 +1,14 @@
+# Aurora Song - SLE (Security Logistics Enforcement) glasses
+# Prototypes for Aurora Song's SLE faction equipment
+
+- type: entity
+  parent: ClothingEyesGlassesSecurity
+  id: ASClothingEyesGlassesSLE
+  name: SLE glasses
+  description: Upgraded sunglasses that provide flash immunity and a security HUD.
+  components:
+  - type: Sprite
+    sprite: _AS/Clothing/Eyes/Glasses/sle_glasses.rsi # Aurora Song - Using SLE-recolored sprites
+  - type: Clothing
+    sprite: _AS/Clothing/Eyes/Glasses/sle_glasses.rsi # Aurora Song - Using SLE-recolored sprites
+

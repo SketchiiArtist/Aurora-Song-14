@@ -119,6 +119,19 @@
     #     shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -176,3 +189,56 @@
     - type: ActivatableUIRequiresAccess
     - type: MarketModifier
       mod: 5
+
+# Aurora Song - SLE (Security Logistics Enforcement) vending machines
+- type: entity
+  parent: [BaseStructureDisableAnchoring, VendingMachine]
+  id: ASVendingMachineSLEDrobe
+  name: SLEDrobe
+  description: A vending machine for Security Logistics Enforcement clothing and equipment.
+  components:
+  - type: VendingMachine
+    pack: ASSLEDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: NfsdDrobeAds # Aurora Song - Reusing voice lines
+  - type: Sprite
+    sprite: _AS/Structures/Machines/VendingMachines/sledrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Security"]]
+
+- type: entity
+  parent: [BaseStructureDisableAnchoring, VendingMachine]
+  id: ASVendingMachineSLETech
+  name: SLETech
+  description: A vending machine for Security Logistics Enforcement technical equipment.
+  components:
+  - type: VendingMachine
+    pack: ASSLETechInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: NfsdDrobeAds # Aurora Song - Reusing voice lines
+  - type: Sprite
+    sprite: _AS/Structures/Machines/VendingMachines/sletech.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Security"]]

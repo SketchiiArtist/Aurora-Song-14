@@ -60,9 +60,10 @@
   equipment:
     head: ClothingHeadHatFedoraBrown
     mask: ClothingMaskGasSecurity
-    eyes: ClothingEyesGlassesNfsd
+    eyes: ASClothingEyesGlassesSLE
     neck: ClothingNeckNfsdBadgeDetective
     gloves: ClothingHandsGlovesForensic
-    shoes: ClothingShoesBootsNfsdBrownFilled
-    belt: ClothingBeltNfsdFilled
+    shoes: ASClothingShoesBootsSLEDarkBlueFilled
+    belt: ASClothingBeltSLEFilled
     outerClothing: ClothingOuterCoatTrench
+

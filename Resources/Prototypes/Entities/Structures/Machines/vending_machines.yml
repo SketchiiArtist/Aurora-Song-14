@@ -114,8 +114,8 @@
   - type: VendingMachine
     pack: EmptyVendingMachineInventory # Mandatory, use empty inventory
     taxAccounts:
-      Frontier: 0.25
-      Nfsd: 0.15
+      Aurora: 0.25 # Aurora Song - Changed from Frontier to Aurora
+      Sle: 0.15 # Aurora Song - Changed from Nfsd to Sle (Sector Law Enforcement)
     cashSlot:
       whitelist:
         components:

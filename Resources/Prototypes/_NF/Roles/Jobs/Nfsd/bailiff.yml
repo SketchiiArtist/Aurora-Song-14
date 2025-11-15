@@ -65,10 +65,11 @@
   hasMindShield: true
   equipment:
     head: ClothingHeadHatNfsdBeretBrown
-    mask: ClothingMaskGasNfsd
-    eyes: ClothingEyesGlassesNfsd
-    outerClothing: ClothingOuterCoatNfsdFormal
+    mask: ASClothingMaskGasSLE
+    eyes: ASClothingEyesGlassesSLE
+    outerClothing: ASClothingOuterCoatSLEFormal
     neck: ClothingNeckNfsdBadgeWarden
-    belt: ClothingBeltNfsdFilled
-    gloves: ClothingHandsGlovesCombatNfsdCream
-    shoes: ClothingShoesBootsNfsdCreamFilled
+    belt: ASClothingBeltSLEFilled
+    gloves: ASClothingHandsGlovesCombatSLELightBlue
+    shoes: ASClothingShoesBootsSLELightBlueFilled
+

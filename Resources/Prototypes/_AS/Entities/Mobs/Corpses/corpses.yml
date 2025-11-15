@@ -1,0 +1,24 @@
+- type: entity
+  parent: SalvageHumanCorpse
+  id: ASMobSLEOfficerCorpse
+  suffix: Dead, SLE Officer
+  name: SLE officer corpse
+  description: A deceased Sector Law Enforcement officer.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes:
+      - ASSLEOfficerCorpseGear
+
+- type: startingGear
+  id: ASSLEOfficerCorpseGear
+  equipment:
+    head: ASClothingHeadHatSLEBeretBrown
+    mask: ASClothingMaskGasSLE
+    eyes: ClothingEyesGlassesNfsd
+    ears: ClothingHeadsetAltSecurity
+    jumpsuit: ASClothingUniformJumpsuitSLE
+    shoes: ClothingShoesBootsNfsdBrownFilled
+    gloves: ClothingHandsGlovesCombatNfsdBrown
+    neck: ClothingNeckNfsdBadgeSecurity
+    id: SecurityPDA

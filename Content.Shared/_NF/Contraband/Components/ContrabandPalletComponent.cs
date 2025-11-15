@@ -26,7 +26,7 @@ public sealed partial class ContrabandPalletConsoleComponent : Component
     public string? LicenseRequired = "contraband handling license";
 
     [ViewVariables(VVAccess.ReadWrite), DataField(serverOnly: true)]
-    public string Faction = "NFSD";
+    public string Faction = "SLE"; // Aurora Song - Changed from "NFSD" to "SLE" (Station Law Enforcement)
 
     [ViewVariables(VVAccess.ReadWrite), DataField]
     public string LocStringPrefix = string.Empty;

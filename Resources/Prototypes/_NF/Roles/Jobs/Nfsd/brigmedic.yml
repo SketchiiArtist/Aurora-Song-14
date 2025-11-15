@@ -53,8 +53,9 @@
     head: ClothingHeadHatNfsdBeretCream
     mask: ClothingMaskBreathMedicalSecurity
     eyes: ClothingEyesHudNfsdMed
-    outerClothing: ClothingOuterCoatNfsdBomberBrigmed
+    outerClothing: ASClothingOuterCoatSLEBomberBrigmed
     neck: ClothingNeckNfsdBadgeSecurityBrigmedic
-    belt: ClothingBeltNfsdWebbingFilledBrigmedic
+    belt: ASClothingBeltSLEWebbingFilledBrigmedic
     gloves: ClothingHandsGlovesNitrile
-    shoes: ClothingShoesBootsNfsdCreamFilled
+    shoes: ASClothingShoesBootsSLELightBlueFilled
+
