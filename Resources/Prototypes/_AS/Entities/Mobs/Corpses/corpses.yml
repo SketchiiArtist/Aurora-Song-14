@@ -34,12 +34,22 @@
   parent: [ASMedicalBountyBase, ASRandomLoadoutSLEOfficer]
   id: ASMedicalBouncySLEOfficer
   randomizeName: true
-  speciesWhitelist:
-  - Human
-  - Felinid
-  - Harpy
-  - Vulpkanin
-  - Reptilian
+  speciesBlacklist:
+  - Arachnid
+  - Diona
+  - Dwarf
+  - Feroxi
+  - Gingerbread
+  - Goblin
+  - IPC
+  - Moth
+  - Oni
+  - Rodentia
+  - Sheleg
+  - Skeleton
+  - SlimePerson
+  - Tajaran
+  - Vox
   components:
   - type: ASMedicalBounty
     bountyId: ASSLEOfficerInjured  # Specific light bounty for SLE officers

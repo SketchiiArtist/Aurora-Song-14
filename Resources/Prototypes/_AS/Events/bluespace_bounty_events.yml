@@ -97,7 +97,7 @@
     maxDuration: 2100
     reoccurrenceDelay: 14400 # 4 hours
     requiredJobs:
-      Sergeant: 1
+      SeniorOfficer: 1
   - type: BluespaceErrorBountyRule
     includeGridValue: false
     announcementChannels:
@@ -169,7 +169,7 @@
     maxDuration: 2400
     reoccurrenceDelay: 7200 # 2 hours
     requiredJobs:
-      Sergeant: 1
+      SeniorOfficer: 1
   - type: BluespaceErrorBountyRule
     includeGridValue: false
     announcementChannels:
