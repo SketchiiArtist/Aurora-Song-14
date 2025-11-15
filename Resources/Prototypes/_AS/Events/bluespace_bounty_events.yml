@@ -95,7 +95,7 @@
     weight: 1
     duration: 1500  # 25 minutes after grid spawns
     maxDuration: 2100
-    reoccurrenceDelay: 14400
+    reoccurrenceDelay: 14400 # 4 hours
     requiredJobs:
       Sergeant: 1
   - type: BluespaceErrorBountyRule
@@ -167,7 +167,7 @@
     weight: 3
     duration: 900  # 15 minutes after grid spawns
     maxDuration: 2400
-    reoccurrenceDelay: 1500
+    reoccurrenceDelay: 7200 # 2 hours
     requiredJobs:
       Sergeant: 1
   - type: BluespaceErrorBountyRule
