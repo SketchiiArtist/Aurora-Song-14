@@ -4918,3 +4918,12 @@ Entries:
   id: 8838
   time: '2025-11-15T19:48:59.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/596
+- author: Vandanna
+  changes:
+    - type: Fix
+      message: Event timers and reqs for Triage, further tweaks
+    - type: Fix
+      message: Event timers and reqs for Objective Events, further tweaks
+  id: 8839
+  time: '2025-11-16T00:05:03.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/597
