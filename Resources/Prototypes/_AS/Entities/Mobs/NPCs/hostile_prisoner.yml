@@ -12,6 +12,17 @@
   - MobHumanoidInvetory
   description: A dangerous prisoner wielding a makeshift glass shiv. Desperate and violent.
   components:
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - Flashed
   - type: Stamina
     critThreshold: 100
   - type: RandomHumanoidAppearance
@@ -56,6 +67,17 @@
   - MobHumanoidInvetory
   description: A violent prisoner who has stolen security riot gear. Heavily armored and wielding a combat knife.
   components:
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - Flashed
   - type: Stamina
     critThreshold: 100
   - type: RandomHumanoidAppearance
@@ -102,6 +124,17 @@
   - MobHumanoidInvetory
   description: A dangerous prisoner wearing stolen riot armor and wielding a stun baton.
   components:
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - Flashed
   - type: Stamina
     critThreshold: 100
   - type: RandomHumanoidAppearance

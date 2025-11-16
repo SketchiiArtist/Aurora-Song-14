@@ -73,6 +73,24 @@
     containers:
       board: [ DoorElectronicsArmory ]
 
+- type: entity
+  parent: ASAirlockSLE
+  id: ASAirlockSLEPrisonerLocked
+  suffix: SLE, Prisoner, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPrisoner ]
+
+- type: entity
+  parent: ASAirlockSLEGlass
+  id: ASAirlockSLEPrisonerGlassLocked
+  suffix: SLE, Prisoner, Glass, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPrisoner ]
+
 # SLE External Airlocks
 - type: entity
   parent: ASAirlockExternalGlassSLE

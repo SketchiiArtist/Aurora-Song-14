@@ -68,6 +68,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Medical",
         "Mercenary", // Frontier
         "ChiefEngineer", // Frontier: moved down, alphabetic w.r.t. "Plant Manager"
+        "Prisoner", // Aurora Song
         //"Quartermaster",
         //"Research",
         //"ResearchDirector",

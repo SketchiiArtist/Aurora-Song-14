@@ -6,5 +6,5 @@
 - type: loadout
   id: BrigmedicClothingEyesGlasses
   equipment:
-    eyes: ClothingEyesHudNfsdMed
+    eyes: ASClothingEyesGlassesSLECorpsman
 

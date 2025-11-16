@@ -19,3 +19,13 @@
   - MedicalHeadsetLoadout
   fallbacks:
   - MedicalHeadsetLoadout
+
+- type: loadoutGroup
+  id: MedicGlasses
+  name: loadout-group-contractor-glasses
+  minLimit: 0
+  loadouts:
+  - MedicClothingEyesHudMedical
+  - MedicClothingEyesGlassesMedic
+  subgroups:
+  - ContractorGlasses

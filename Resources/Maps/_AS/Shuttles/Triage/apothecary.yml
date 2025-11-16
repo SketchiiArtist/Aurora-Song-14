@@ -2518,13 +2518,6 @@ entities:
     - type: Transform
       pos: -2.0530152,9.70385
       parent: 1
-- proto: MachineElectrolysisUnit
-  entities:
-  - uid: 402
-    components:
-    - type: Transform
-      pos: 3.5,1.5
-      parent: 1
 - proto: ASMedicalBedFilledSpawner
   entities:
   - uid: 178

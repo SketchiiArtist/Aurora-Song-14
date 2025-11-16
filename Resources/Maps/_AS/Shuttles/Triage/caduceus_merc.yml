@@ -1486,7 +1486,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,2.5
       parent: 1
-- proto: BiomassReclaimer
+- proto: MachineFrameDestroyed
   entities:
   - uid: 802
     components:
@@ -3715,14 +3715,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -0.5,9.5
       parent: 1
-- proto: ChemDispenser
+- proto: MachineFrameDestroyed
   entities:
   - uid: 615
     components:
     - type: Transform
       pos: 3.5,-9.5
       parent: 1
-- proto: ChemMaster
+- proto: MachineFrameDestroyed
   entities:
   - uid: 546
     components:
@@ -3935,7 +3935,7 @@ entities:
     - type: Transform
       pos: -6.5,-9.5
       parent: 1
-- proto: CryoPod
+- proto: MachineFrameDestroyed
   entities:
   - uid: 690
     components:
@@ -5740,19 +5740,13 @@ entities:
       color: '#0000FFFF'
     - type: Label
       currentLabel: Distro to Cryo
-- proto: GasThermoMachineFreezer
+- proto: MachineFrameDestroyed
   entities:
   - uid: 692
     components:
     - type: Transform
       pos: -1.5,2.5
       parent: 1
-    - type: GasThermoMachine
-      targetTemperature: 75
-    - type: ApcPowerReceiver
-      powerDisabled: False
-    - type: AtmosPipeColor
-      color: '#0000FFFF'
 - proto: GasVentPump
   entities:
   - uid: 805
@@ -6490,13 +6484,6 @@ entities:
     - type: Transform
       pos: 4.274497,9.370374
       parent: 1
-- proto: KitchenReagentGrinder
-  entities:
-  - uid: 621
-    components:
-    - type: Transform
-      pos: 5.5,-7.5
-      parent: 1
 - proto: KitchenSpike
   entities:
   - uid: 800
@@ -6589,20 +6576,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -11.5,-17.5
       parent: 1
-- proto: MachineCentrifuge
-  entities:
-  - uid: 625
-    components:
-    - type: Transform
-      pos: 3.5,-10.5
-      parent: 1
-- proto: MachineElectrolysisUnit
-  entities:
-  - uid: 618
-    components:
-    - type: Transform
-      pos: 6.5,-7.5
-      parent: 1
 - proto: MedicalAssembler
   entities:
   - uid: 453
@@ -6632,7 +6605,7 @@ entities:
     - type: Transform
       pos: 4.5,1.5
       parent: 1
-- proto: MedicalTechFab
+- proto: MachineFrameDestroyed
   entities:
   - uid: 1209
     components:
@@ -8109,48 +8082,6 @@ entities:
     components:
     - type: Transform
       pos: 9.5,-12.5
-      parent: 1
-- proto: VendingMachineChemicals
-  entities:
-  - uid: 616
-    components:
-    - type: Transform
-      pos: 7.5,-7.5
-      parent: 1
-- proto: VendingMachineCoffee
-  entities:
-  - uid: 1433
-    components:
-    - type: Transform
-      pos: 4.5,8.5
-      parent: 1
-- proto: VendingMachineEngivend
-  entities:
-  - uid: 632
-    components:
-    - type: Transform
-      pos: 14.5,-11.5
-      parent: 1
-- proto: VendingMachineMedical
-  entities:
-  - uid: 703
-    components:
-    - type: Transform
-      pos: 0.5,2.5
-      parent: 1
-- proto: VendingMachineMediDrobe
-  entities:
-  - uid: 635
-    components:
-    - type: Transform
-      pos: 4.5,-3.5
-      parent: 1
-- proto: VendingMachineSeeds
-  entities:
-  - uid: 795
-    components:
-    - type: Transform
-      pos: -6.5,9.5
       parent: 1
 - proto: WallShuttle
   entities:

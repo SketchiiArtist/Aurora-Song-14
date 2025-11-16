@@ -1329,14 +1329,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-1.5
       parent: 1
-- proto: ChemDispenser
+- proto: MachineFrameDestroyed
   entities:
   - uid: 280
     components:
     - type: Transform
       pos: 2.5,-7.5
       parent: 1
-- proto: ChemMaster
+- proto: MachineFrameDestroyed
   entities:
   - uid: 368
     components:
@@ -2093,13 +2093,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.5,-10.5
       parent: 1
-- proto: MachineElectrolysisUnit
-  entities:
-  - uid: 243
-    components:
-    - type: Transform
-      pos: 2.5,-10.5
-      parent: 1
 - proto: MedicalAssembler
   entities:
   - uid: 160
@@ -2114,7 +2107,7 @@ entities:
     - type: Transform
       pos: 2.5,-4.5
       parent: 1
-- proto: MedicalTechFab
+- proto: MachineFrameDestroyed
   entities:
   - uid: 257
     components:
@@ -2702,13 +2695,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,-3.5
-      parent: 1
-- proto: VendingMachineWallMedical
-  entities:
-  - uid: 5
-    components:
-    - type: Transform
-      pos: -0.5,-2.5
       parent: 1
 - proto: WallReinforced
   entities:

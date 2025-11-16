@@ -6,7 +6,7 @@
 - type: entity
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseMachinePowered]
   id: ASMachineMedicalBountyRedemption
-  name: AS patient discharge unit
+  name: patient discharge unit
   description: A specialized medical terminal for processing patient discharges and rewards. Insert healed patients to receive payment.
   components:
   - type: Sprite

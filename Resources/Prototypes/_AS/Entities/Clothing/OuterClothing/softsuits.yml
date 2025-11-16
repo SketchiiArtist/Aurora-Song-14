@@ -34,6 +34,7 @@
   description: An EVA suit with a built-in helmet commonly issued to Security Logistics Enforcement personnel.
   components:
   - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Suits/eva_color.rsi
     layers:
     - state: icon-base
       color: "#5a8fc5"  # SLE standard blue
@@ -51,6 +52,7 @@
       visible: false
       map: [ "light" ]
   - type: Item
+    sprite: _NF/Clothing/OuterClothing/Suits/eva_color.rsi
     inhandVisuals:
       left:
       - state: inhand-left-base
@@ -77,20 +79,21 @@
       - state: inhand-right-unshaded
         shader: unshaded
   - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Suits/eva_color.rsi
     clothingVisuals:
       outerClothing:
-      - state: equipped-OUTERCLOTHING-base
+      - state: equipped-base
         color: "#5a8fc5"  # SLE standard blue
-      - state: equipped-OUTERCLOTHING-decals-01
+      - state: equipped-decals-01
         color: "#2a4a7c"  # SLE dark blue
-      - state: equipped-OUTERCLOTHING-reinforced-points
+      - state: equipped-reinforced-points
         color: "#7aa5d5"  # SLE bright blue
-      - state: equipped-OUTERCLOTHING-shoulder-light
+      - state: equipped-shoulder-light
         color: "#2a4a7c"  # SLE dark blue
-      - state: equipped-OUTERCLOTHING-breathing-gear
-      - state: equipped-OUTERCLOTHING-unshaded
+      - state: equipped-breathing-gear
+      - state: equipped-unshaded
         shader: unshaded
-      - state: equipped-OUTERCLOTHING-shoulder-light-overlay-unshaded
+      - state: equipped-shoulder-light-overlay-unshaded
         shader: unshaded
         visible: false
         map: [ "light" ]

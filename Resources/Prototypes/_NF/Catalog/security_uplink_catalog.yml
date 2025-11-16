@@ -1064,6 +1064,22 @@
           - SecurityUplink
 
 - type: listing
+  id: UplinkSecurityStingerGrenadeBox
+  name:  uplink-security-stingergrenade-box-name
+  description: uplink-security-stingergrenade-box-desc
+  productEntity: BoxStingerGrenadesNfsd
+  icon: { sprite: Objects/Weapons/Grenades/stinger.rsi, state: icon}
+  cost:
+    FrontierUplinkCoin: 2
+  categories:
+    - UplinkSecurityExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+- type: listing
   id: UplinkSecurityBreachingChargesBox
   name:  uplink-security-breachingcharge-box-name
   description: uplink-security-breachingcharge-box-desc

@@ -5732,19 +5732,13 @@ entities:
       color: '#0000FFFF'
     - type: Label
       currentLabel: Distro to Cryo
-- proto: GasThermoMachineFreezer
+- proto: MachineFrameDestroyed
   entities:
   - uid: 692
     components:
     - type: Transform
       pos: -1.5,2.5
       parent: 1
-    - type: GasThermoMachine
-      targetTemperature: 75
-    - type: ApcPowerReceiver
-      powerDisabled: False
-    - type: AtmosPipeColor
-      color: '#0000FFFF'
 - proto: GasVentPump
   entities:
   - uid: 805
@@ -6573,13 +6567,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -11.5,-17.5
-      parent: 1
-- proto: MachineElectrolysisUnit
-  entities:
-  - uid: 453
-    components:
-    - type: Transform
-      pos: 5.5,-10.5
       parent: 1
 - proto: ASMedicalBedFilledSpawner
   entities:

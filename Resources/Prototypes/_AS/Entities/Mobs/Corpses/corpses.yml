@@ -59,10 +59,8 @@
   equipment:
     head: ASClothingHeadHatSLEBeretBrown
     mask: ASClothingMaskGasSLE
-    eyes: ClothingEyesGlassesNfsd
-    ears: ClothingHeadsetAltSecurity
+    eyes: ASClothingEyesGlassesSLE
     jumpsuit: ASClothingUniformJumpsuitSLE
-    shoes: ClothingShoesBootsNfsdBrownFilled
-    gloves: ClothingHandsGlovesCombatNfsdBrown
-    neck: ClothingNeckNfsdBadgeSecurity
-    id: SecurityPDA
+    shoes: ASClothingShoesBootsSLEDarkBlueFilled
+    gloves: ASClothingHandsGlovesCombatSLEDarkBlue
+    neck: ASClothingNeckSLEBadgeSecurity

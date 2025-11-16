@@ -44,6 +44,7 @@
       - Medical
       - Mercenary # Frontier
       - ChiefEngineer # Frontier: reordered for "Plant Manager"
+      - Prisoner # Aurora Song
       # - Quartermaster # Frontier
       # - Research # Frontier
       # - ResearchDirector # Frontier
@@ -126,6 +127,7 @@
     - Mercenary # Frontier
     - ChiefEngineer # Frontier: reordered for "Plant Manager"
     - Pirate # Frontier
+    - Prisoner # Aurora Song
     - Quartermaster
     - Research
     - ResearchDirector
