@@ -73,6 +73,7 @@
 
 # Capture Mission - Quell the Prison Riot
 # Aurora Song - Uses 4-announcement system: incoming (T+0) -> arrival (T+30m) -> warning (T+50m) -> end (T+55m)
+# duration values are in seconds, reoccurrenceDelay/ earliestStart is in minutes
 - type: entity
   id: ASBluespacePrisonRiot
   parent: BaseStationEventShortDelay
@@ -91,11 +92,11 @@
     warningAnnouncement: station-event-bluespace-prison-riot-warning  # "Prison ship departing in 5 minutes"
     warningDurationLeft: 300  # 5 minutes before event ends
     endAnnouncement: station-event-bluespace-prison-riot-end  # "Prison ship has departed"
-    earliestStart: 7200  # 2 hours after shift start minimum before event can trigger
+    earliestStart: 120 # 2 hours after shift start minimum before event can trigger
     weight: 1
     duration: 1500  # 25 minutes after grid spawns
     maxDuration: 2100
-    reoccurrenceDelay: 14400 # 4 hours
+    reoccurrenceDelay: 240 # 4 hours
     requiredJobs:
       SeniorOfficer: 1
   - type: BluespaceErrorBountyRule
@@ -145,6 +146,7 @@
 
 # Confiscation Mission - Smuggler Ship Interception
 # Aurora Song - Uses 4-announcement system: incoming (T+0) -> arrival (T+15m) -> warning (T+25m) -> end (T+30m)
+# duration values are in seconds, reoccurrenceDelay/ earliestStart is in minutes
 - type: entity
   id: ASBluespaceSmugglerInterception
   parent: BaseStationEventShortDelay
@@ -163,11 +165,11 @@
     warningAnnouncement: station-event-bluespace-smuggler-interception-warning  # "Smuggler vessel departing in 5 minutes"
     warningDurationLeft: 300  # 5 minutes before event ends
     endAnnouncement: station-event-bluespace-smuggler-interception-end  # "Smuggler vessel has departed"
-    earliestStart: 7200  # 2 hours after shift start minimum before event can trigger
+    earliestStart: 120 # 2 hours after shift start minimum before event can trigger
     weight: 3
     duration: 900  # 15 minutes after grid spawns
     maxDuration: 2400
-    reoccurrenceDelay: 7200 # 2 hours
+    reoccurrenceDelay: 120 # 2 hours
     requiredJobs:
       SeniorOfficer: 1
   - type: BluespaceErrorBountyRule

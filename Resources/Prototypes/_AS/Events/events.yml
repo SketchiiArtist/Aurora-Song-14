@@ -2,6 +2,7 @@
 # Based on New Frontier Station 14's Bluespace Grid Event
 # Original implementation: https://github.com/new-frontiers-14/frontier-station-14
 
+# duration values are in seconds, reoccurrenceDelay/ earliestStart is in minutes
 - type: entity
   id: ASBluespaceTriageEvent
   parent: BaseStationEventShortDelay
@@ -15,13 +16,11 @@
     warningRadioAnnouncementChannel: Medical
     endRadioAnnouncement: as-event-bluespace-grid-end-announcement
     endRadioAnnouncementChannel: Medical
-    earliestStart: 7200  # 2 hours after shift start minimum before event can trigger
+    earliestStart: 30  # 30 minutes after shift start minimum before event can trigger
     weight: 5
     duration: 1500 # 25 minutes
     maxDuration: 2100 # 35 minutes
-    reoccurrenceDelay: 7200 # 2 hours
-    requiredJobs:
-      Medic: 1
+    reoccurrenceDelay: 90 # 1.5 hours
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
