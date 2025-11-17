@@ -1411,13 +1411,18 @@ namespace Content.Client.Lobby.UI
             Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
             SetDirty();
         }
-
+// Aurora: Sliders
         private void SetHeight(float newHeight)
         {
             if (_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var species))
                 newHeight = Math.Clamp(newHeight, species.MinHeight, species.MaxHeight);
 
-            Profile = Profile?.WithCharacterAppearance(Profile.Appearance.WithHeight(newHeight));
+            if (Profile != null)
+            {
+                var appearance = Profile.Appearance.WithHeight(newHeight);
+                Profile = Profile.WithCharacterAppearance(appearance);
+            }
+
             SetDirty();
             ReloadPreview();
             UpdateSpriteViewScale();
@@ -1429,7 +1434,8 @@ namespace Content.Client.Lobby.UI
             {
                 var midpoint = (species.MinHeight + species.MaxHeight) / 2f;
                 SetHeight(midpoint);
-                HeightSlider.Value = midpoint;
+                if (HeightSlider != null)
+                    HeightSlider.Value = midpoint;
             }
 
             UpdateHeightControls();
@@ -1440,11 +1446,16 @@ namespace Content.Client.Lobby.UI
             if (_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var species))
                 newWidth = Math.Clamp(newWidth, species.MinWidth, species.MaxWidth);
 
-            Profile = Profile?.WithCharacterAppearance(Profile.Appearance.WithWidth(newWidth));
+            if (Profile != null)
+            {
+                var appearance = Profile.Appearance.WithWidth(newWidth);
+                Profile = Profile.WithCharacterAppearance(appearance);
+            }
+
             SetDirty();
             ReloadPreview();
             UpdateSpriteViewScale();
-}
+        }
 
         private void ResetWidth()
         {
@@ -1452,11 +1463,14 @@ namespace Content.Client.Lobby.UI
             {
                 var midpoint = (species.MinWidth + species.MaxWidth) / 2f;
                 SetWidth(midpoint);
-                WidthSlider.Value = midpoint;
+                if (WidthSlider != null)
+                    WidthSlider.Value = midpoint;
             }
+
             UpdateWidthControls();
         }
 
+// Aurora: Sliders end
         public bool IsDirty
         {
             get => _isDirty;
