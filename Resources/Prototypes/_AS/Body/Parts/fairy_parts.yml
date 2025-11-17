@@ -117,3 +117,4 @@
   - type: Sprite
     sprite: Mobs/Species/human/parts.rsi
     state: "r_foot"
+
