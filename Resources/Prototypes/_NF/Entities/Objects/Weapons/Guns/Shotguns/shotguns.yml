@@ -1,7 +1,7 @@
 #region WizDen
 - type: entity
   id: NFWeaponShotgunBulldog
-  parent: [BaseC2ContrabandUnredeemable, NFBaseWeaponShotgunChamber12gMagazine, NFBaseWeaponFrameShotgunWieldable, NFBaseWeaponEncumbranceLMG, NFBaseWeaponFrameShotgunGorlex] # Contraband status adjusted | Aurora
+  parent: [BaseC2ContrabandUnredeemable, NFBaseWeaponShotgunChamber12gMagazine, NFBaseWeaponFrameShotgunWieldable, NFBaseWeaponFrameShotgunGorlex] # Contraband status adjusted | Aurora
   name: Bulldog
   description: |-
     An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids.
@@ -12,6 +12,8 @@
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
   - type: Item # Size fix attempted, possibly still goes into boots for some reason | Aurora
     size: Large
+    shape:
+    - 0,0,4,3
   - type: Gun
     selectedMode: FullAuto
     availableModes:
@@ -31,6 +33,9 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
   - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0 # Aurora Song
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
   - type: BallisticAmmoProvider
     capacity: 2
@@ -47,6 +52,8 @@
   description: |-
     A premium semi-automatic shotgun, featuring an upgraded tube capacity.
   components:
+  - type: BallisticAmmoProvider
+    capacity: 7
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Clothing
@@ -93,9 +100,9 @@
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Shotguns/sawn.rsi
   - type: Item
-    size: Normal
+    size: Small # Aurora Song Normal>Small
     shape:
-    - 0,0,4,0
+    - 0,0,1,0 # Aurora Song 0,0,4,0>0,0,1,0
   - type: BallisticAmmoProvider
     capacity: 2
   - type: NFWeaponDetails

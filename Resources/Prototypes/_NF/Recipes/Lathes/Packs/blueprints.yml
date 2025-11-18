@@ -331,6 +331,7 @@
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
+  - ASBluespaceReagentGrinderIndustrialMachineCircuitboard # Aurora Song
   - PlantAnalyzer
   # AudioVisualCommunication
   - SurveillanceWirelessCameraMovableCircuitboard
@@ -476,6 +477,7 @@
   - TimerTrigger
   - FlashPayload
   - ChemicalPayload
+  - ExplosivePayload
   # NFBasicShuttleArmament
   - PowerCageRechargerCircuitboard
   - PowerCageSmall
@@ -484,6 +486,9 @@
   - NFMagazineGrenadeEmpty
   # NFPortableMicrofusionWeaponry
   - NFPortableRecharger
+  # Aurora Song - weapons
+  - ASWeaponBasinLasPistol
+  - ASWeaponKasyreLasRifle
 
 # region Engineering & Science
 - type: latheRecipePack

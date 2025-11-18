@@ -1,0 +1,20 @@
+﻿- type: entity
+  id: ASThroneOzymandias
+  parent: VehicleHoverchair
+  name: Ozymandias' Throne
+  description: A luxurious hoverchair, the whole chassis of gold engraved with some pictorial script. You feel a strange urge to kneel before it.
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Piercing: -1
+        Blunt: -1
+        Slash: -1
+        Cold: -1
+        Heat: -1
+        Radiation: -1
+        Bloodloss: -1
+        Poison: -1
+        Cellular: -1
+        Shock: -1
+        Caustic: -1
