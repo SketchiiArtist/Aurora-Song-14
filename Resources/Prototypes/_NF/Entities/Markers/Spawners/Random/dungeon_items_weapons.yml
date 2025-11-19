@@ -287,6 +287,7 @@
     - WeaponCaseShortAntiqueLaserExpedition
     - WeaponCaseShortAdvancedLaserExpedition
     - WeaponCaseLongXrayCannonExpedition
+    - WeaponCaseLongEstocExpeditionT4
     - WeaponCaseLongHristovExpedition # Hristov to T4, this thing eats walls like candy |Aurora Song
     #- WeaponCaseLongTemperatureGunExpedition | Aurora Song - Too PVP focused, not much PVE use.
     chance: 1.0
@@ -321,6 +322,7 @@
     - WeaponCaseLongEnergyGunExpedition
     - WeaponCaseLongLaserCannonExpedition
     - WeaponCaseHeavyAsmgtExpeditions
+    - WeaponCaseLongEstocExpeditionT5
     chance: 1.0
     offset: 0.0
 
