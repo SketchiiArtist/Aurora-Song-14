@@ -5005,3 +5005,10 @@ Entries:
   id: 8847
   time: '2025-11-19T02:33:48.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/604
+- author: assignedgod
+  changes:
+    - type: Tweak
+      message: 'Modified gun tiers '
+  id: 8848
+  time: '2025-11-19T02:53:58.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/588
