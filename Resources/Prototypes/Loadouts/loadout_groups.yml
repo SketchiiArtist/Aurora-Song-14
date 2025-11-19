@@ -1327,6 +1327,13 @@
   - GlassesJensen
 
 - type: loadoutGroup
+  id: MedicalBelt
+  name: loadout-group-medical-belt
+  minLimit: 0
+  loadouts:
+  - MedicalDoctorMedicRig
+
+- type: loadoutGroup
   id: SurvivalMedical
   name: loadout-group-survival-medical
   minLimit: 2
