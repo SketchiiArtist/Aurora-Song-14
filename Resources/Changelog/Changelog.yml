@@ -4998,3 +4998,10 @@ Entries:
   id: 8846
   time: '2025-11-19T02:15:34.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/605
+- author: Vandanna
+  changes:
+    - type: Tweak
+      message: mask sprites for vulps
+  id: 8847
+  time: '2025-11-19T02:33:48.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/604
