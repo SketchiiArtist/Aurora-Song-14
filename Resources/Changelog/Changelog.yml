@@ -4982,3 +4982,12 @@ Entries:
   id: 8844
   time: '2025-11-18T10:15:06.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/599
+- author: Vandanna
+  changes:
+    - type: Fix
+      message: many hardsuits missing Vulpkanin sprites
+    - type: Tweak
+      message: Syndicate hardsuit sprites to funky versions
+  id: 8845
+  time: '2025-11-19T01:03:00.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/603
