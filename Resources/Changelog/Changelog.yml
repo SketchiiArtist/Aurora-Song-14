@@ -5033,3 +5033,12 @@ Entries:
   id: 8851
   time: '2025-11-19T04:33:48.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/601
+- author: assignedgod
+  changes:
+    - type: Add
+      message: Added fairies, a new species!
+    - type: Add
+      message: Added fairy blood that can be used to make narcotics!
+  id: 8852
+  time: '2025-11-19T05:35:09.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/590
