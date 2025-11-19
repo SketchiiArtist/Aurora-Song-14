@@ -79,6 +79,9 @@
     tags:
     - VimPilot
     - DoorBumpOpener
+    - CanPilot
+    - FootstepSound
+    - AnomalyHost
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Effects/bite.ogg
