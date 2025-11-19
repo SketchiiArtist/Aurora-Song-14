@@ -5019,3 +5019,10 @@ Entries:
   id: 8849
   time: '2025-11-19T02:54:08.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/602
+- author: AssignedGod
+  changes:
+    - type: Fix
+      message: Added the Kasyre and Basin to contraband registration
+  id: 8850
+  time: '2025-11-19T03:14:38.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/606
