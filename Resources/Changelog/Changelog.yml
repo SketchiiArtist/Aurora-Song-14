@@ -5065,3 +5065,10 @@ Entries:
   id: 8855
   time: '2025-11-19T11:43:31.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/610
+- author: Zenixic
+  changes:
+    - type: Tweak
+      message: added a sink to the Scythe, adjusted decals
+  id: 8856
+  time: '2025-11-20T08:51:09.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/614
