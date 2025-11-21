@@ -367,7 +367,7 @@
   - type: Vocalizer
   - type: DatasetVocalizer
     dataset: MedibotAds
-    hideChat: true
+    hideChat: true # Aurora
   - type: Inventory
     templateId: medibot
   - type: DoAfter
