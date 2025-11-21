@@ -365,9 +365,9 @@
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: Vocalizer
+    hideChat: true
   - type: DatasetVocalizer
     dataset: MedibotAds
-    hideChat: true # Aurora
   - type: Inventory
     templateId: medibot
   - type: DoAfter
