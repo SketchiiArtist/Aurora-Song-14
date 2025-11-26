@@ -1,8 +1,8 @@
 - type: construction
   id: ShuttersChain
-  graph: Shutters
+  graph: ShuttersChain
   startNode: start
-  targetNode: ShuttersChain
+  targetNode: ShuttersChainNode
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
