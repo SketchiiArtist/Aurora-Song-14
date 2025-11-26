@@ -13,7 +13,7 @@
               doAfter: 1
 
     - node: frame1
-      entity: ShuttersFrame
+      entity: ShutterChainFrame
       edges:
         - to: frame2
           conditions:
@@ -72,7 +72,7 @@
 
     - node: frame4
       edges:
-        - to: ShutterChainFrame
+        - to: ShuttersChainNode
           conditions:
             - !type:EntityAnchored
               anchored: true
@@ -92,32 +92,17 @@
             - tool: Screwing
               doAfter: 0.75
 
-    - node: ShutterChainFrame
-      entity: ShutterChainFrame
+    - node: ShuttersChainNode
+      entity: ShuttersChainOpen
       edges:
-        - to: ShuttersChainNode
+        - to: frame4
           conditions:
             - !type:EntityAnchored
               anchored: true
-          steps:
-            - tool: Anchoring
-              doAfter: 1
-        - to: frame4
           completed:
             - !type:SpawnPrototype
               prototype: PartRodMetal1
               amount: 8
-          steps:
-            - tool: Screwing
-              doAfter: 1
-
-    - node: ShuttersChainNode
-      entity: ShuttersChainOpen
-      edges:
-        - to: ShutterChainFrame
-          conditions:
-            - !type:EntityAnchored
-              anchored: true
           steps:
             - tool: Anchoring
               doAfter: 1

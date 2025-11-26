@@ -11,11 +11,13 @@
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
+  - type: Door
+    changeAirtight: false
   - type: Airtight
     airBlocked: false
   - type: Construction
-    graph: Shutters
-    node: ShuttersChain
+    graph: ShuttersChain
+    node: ShuttersChainNode
     containers:
     - board
 
@@ -30,8 +32,6 @@
     canCollide: false
   - type: RadiationBlocker
     enabled: false
-  - type: Airtight
-    airBlocked: false
 
 - type: entity
   id: ShutterChainFrame
@@ -43,7 +43,7 @@
     sprite: _NewHome/Structures/Doors/Shutters/shutters_chain.rsi
     state: frame
   - type: Construction
-    graph: Shutters
-    node: ShutterChainFrame
+    graph: ShuttersChain
+    node: frame1
     containers:
     - board
