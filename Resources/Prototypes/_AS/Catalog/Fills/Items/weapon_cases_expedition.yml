@@ -63,5 +63,5 @@
     contents:
     - id: ASWeaponRifleAssaultEstocExpedition
       amount: 1
-    - id: NFCartridgeRifle20
+    - id: NFMagazineRifle20
       amount: 4

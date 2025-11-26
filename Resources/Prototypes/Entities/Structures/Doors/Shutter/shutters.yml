@@ -248,3 +248,57 @@
         - HighImpassable
   - type: Transform
     noRot: false # Frontier: true<false
+
+#NewHome start
+- type: entity
+  id: ShuttersChain
+  parent: BaseShutter
+  name: chain shutters
+  description: Let me in! Let me IIIIIINNN!
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Shutters/shutters_chain.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: Airtight
+    airBlocked: false
+  - type: Construction
+    graph: Shutters
+    node: ShuttersChain
+    containers:
+    - board
+
+- type: entity
+  id: ShuttersChainOpen
+  parent: ShuttersChain
+  suffix: Open
+  components:
+  - type: Door
+    state: Open
+  - type: Physics
+    canCollide: false
+  - type: RadiationBlocker
+    enabled: false
+  - type: Airtight
+    airBlocked: false
+
+#Frame for chain shutters
+- type: entity
+  id: ShutterChainFrame
+  parent: ShuttersFrame
+  name: chain shutter frame
+  description: A frame for constructing a chain shutter.
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Shutters/shutters_chain.rsi
+    state: frame
+  - type: Construction
+    graph: Shutters
+    node: ShutterChainFrame
+    containers:
+    - board
+
+#NewHome end

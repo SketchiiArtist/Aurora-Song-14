@@ -177,3 +177,36 @@
           steps:
             - tool: Anchoring
               doAfter: 0.25
+
+# NewHome
+
+    - node: ShuttersChainFrame
+      edges:
+        - to: ShuttersChain
+          conditions:
+            - !type:EntityAnchored
+              anchored: true
+          steps:
+            - tool: Anchoring
+              doAfter: 1
+        - to: frame4
+          completed:
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 8
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+
+    - node: ShuttersChain
+      entity: ShuttersChainOpen
+      edges:
+        - to: ShuttersChainFrame
+          conditions:
+            - !type:EntityAnchored
+              anchored: true
+          steps:
+            - tool: Anchoring
+              doAfter: 1
+# NewHome end
