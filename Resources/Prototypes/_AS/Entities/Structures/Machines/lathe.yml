@@ -29,3 +29,8 @@
     - NfsdAmmoStatic
     - ReportingStatic
     # Inherits SecurityEquipmentStatic and SecurityWeaponsStatic from SecurityTechFab parent
+  - type: OreSiloClient
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - NFBlueprintNfsdTechfab
