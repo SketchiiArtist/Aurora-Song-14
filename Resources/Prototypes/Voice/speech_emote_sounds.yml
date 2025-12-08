@@ -209,7 +209,7 @@
     Scream:
       collection: SlimeFemaleScreams
     Laugh:
-      collection: SlimeFemaleLaugh
+      collection: SlimeFemaleLaughs
     Sneeze:
       collection: FemaleSneezes
     Cough:
