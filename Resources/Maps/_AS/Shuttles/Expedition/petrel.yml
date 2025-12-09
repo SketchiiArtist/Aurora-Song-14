@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.4.0
   forkId: ""
   forkVersion: ""
-  time: 12/07/2025 18:48:20
-  entityCount: 643
+  time: 12/08/2025 21:45:21
+  entityCount: 644
 maps: []
 grids:
 - 1
@@ -3591,7 +3591,7 @@ entities:
   - uid: 594
     components:
     - type: Transform
-      pos: 2.5,5.5
+      pos: -4.5,5.5
       parent: 1
   - uid: 596
     components:
@@ -3607,6 +3607,11 @@ entities:
     components:
     - type: Transform
       pos: -0.5,10.5
+      parent: 1
+  - uid: 644
+    components:
+    - type: Transform
+      pos: 5.5,7.5
       parent: 1
 - proto: ReinforcedWindow
   entities:
